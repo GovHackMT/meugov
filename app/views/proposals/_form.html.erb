@@ -1,13 +1,13 @@
 <%= simple_form_for(@proposal) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.association :user %>
-  </div>
+  <%= f.input :title %>
+  <%= f.input :content %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <fieldset>
+    <legend><%= t '.address' %></legend>
+    <%= f.association :city %>
+  </fieldset>
+
+  <p><%= f.submit t('save'), class: "btn btn-primary" %></p>
 <% end %>

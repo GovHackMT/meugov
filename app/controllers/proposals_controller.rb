@@ -1,5 +1,6 @@
 class ProposalsController < ApplicationController
   before_action :set_proposal, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /proposals
   # GET /proposals.json
@@ -25,10 +26,11 @@ class ProposalsController < ApplicationController
   # POST /proposals.json
   def create
     @proposal = Proposal.new(proposal_params)
+    @proposal.user = current_user
 
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to @proposal, notice: 'Proposal was successfully created.' }
+        format.html { redirect_to @proposal, notice: t('create_notice') }
         format.json { render :show, status: :created, location: @proposal }
       else
         format.html { render :new }
@@ -42,7 +44,7 @@ class ProposalsController < ApplicationController
   def update
     respond_to do |format|
       if @proposal.update(proposal_params)
-        format.html { redirect_to @proposal, notice: 'Proposal was successfully updated.' }
+        format.html { redirect_to @proposal, notice: t('update_notice') }
         format.json { render :show, status: :ok, location: @proposal }
       else
         format.html { render :edit }
@@ -56,7 +58,7 @@ class ProposalsController < ApplicationController
   def destroy
     @proposal.destroy
     respond_to do |format|
-      format.html { redirect_to proposals_url, notice: 'Proposal was successfully destroyed.' }
+      format.html { redirect_to proposals_url, notice: t('destroy_notice') }
       format.json { head :no_content }
     end
   end
@@ -69,6 +71,6 @@ class ProposalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
-      params.require(:proposal).permit(:title, :content, :user_id)
+      params.require(:proposal).permit(:title, :content)
     end
 end
