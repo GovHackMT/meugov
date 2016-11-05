@@ -82,11 +82,11 @@
 			<div class="top-proposals-item">
 				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
 				<div class="top-proposals-info">
-					<div class="top-proposals-title"><strong>Escola Estadual Teste 1</strong></div>
-					<div class="top-proposals-meta">9999 Votos <span class="label label-success">75% Positivo</span></div>
+					<div class="top-proposals-title"><strong><%= proposal.title %></strong></div>
+					<div class="top-proposals-meta"><%= proposal.proposal_votes_count %> Votos <span class="label label-success"><%= proposal.thermometer %>% Positivo</span></div>
 				</div>
 				<div class="top-proposals-actions">
-					<a class="btn btn-primary move-map-btn" data-lat="-15.6027080" data-lng="-56.0975243"><span class="fa fa-map-marker"></span></a>
+					<a class="btn btn-primary move-map-btn" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
 				</div>
 			</div>
 			<% end %>
