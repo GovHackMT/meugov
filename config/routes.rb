@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   end
   resources :cities
   resources :states
+
+  get 'report_properties_cities', to: 'report_properties_cities#index'
+  get 'report_properties_cities_result', to: 'report_properties_cities#result'
 end

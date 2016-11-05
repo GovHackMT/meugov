@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105223847) do
+ActiveRecord::Schema.define(version: 20161105231724) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "state_id",   limit: 4
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20161105223847) do
     t.decimal  "pib",                    precision: 10
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.float    "latitude",   limit: 24
-    t.float    "longitude",  limit: 24
+    t.string   "latitude",   limit: 255
+    t.string   "longitude",  limit: 255
   end
 
   add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree

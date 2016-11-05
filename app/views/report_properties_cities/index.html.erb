@@ -1,0 +1,10 @@
+<h1 class="page-header">Relatório</h1>
+
+<%= form_tag report_properties_cities_result_path, class: 'form-inline', method: :get, remote: true do |f| %>
+  <div class="form-group">
+    <%= select_tag :property_category_id, options_from_collection_for_select(PropertyCategory.order(:name), 'id', 'name', params[:property_category_id]), prompt: Property.human_attribute_name(:property_category_id), class: "form-control" %>
+  </div>
+  <%= button_tag fa_icon('filter', text: t('filters_submit')), class: 'btn btn-primary' %>
+<% end %>
+
+<div id="result"></div>
