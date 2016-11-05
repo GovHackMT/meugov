@@ -12,7 +12,11 @@ class Proposal < ActiveRecord::Base
   validates :city_id, presence: true
 
   def thermometer
-    votes.count > 0 ? ((votes.yes.count / votes.count)/100) : 0
+    total_votes > 0 ? ((total_yes / total_votes) * 100) : 0
+  end
+
+  def total_votes
+    votes.count
   end
 
   def total_yes
@@ -21,5 +25,9 @@ class Proposal < ActiveRecord::Base
 
   def total_no
     votes.no.count
+  end
+
+  def voted?(user)
+    votes.exists?(user: user)
   end
 end

@@ -257,6 +257,12 @@ pt-BR:
         content: "Conteúdo"
         user: "Autor"
         city: "Cidade"
+        city_id: "Cidade"
+        street: "Endereço"
+        number: "Número"
+        complement: "Complemento"
+        neighborhood: "Bairro"
+        cep: "CEP"
 
   mail_form:
     models:

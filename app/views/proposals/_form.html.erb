@@ -6,7 +6,12 @@
 
   <fieldset>
     <legend><%= t '.address' %></legend>
-    <%= f.association :city %>
+    <%= f.input :city_id, collection: City.joins(:state).includes(:state).order(:name), label_method: :name_with_state %>
+    <%= f.input :cep %>
+    <%= f.input :street %>
+    <%= f.input :number %>
+    <%= f.input :complement %>
+    <%= f.input :neighborhood %>
   </fieldset>
 
   <p><%= f.submit t('save'), class: "btn btn-primary" %></p>

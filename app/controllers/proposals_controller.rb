@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
-  before_action :set_proposal, only: [:show, :edit, :update, :destroy, :vote]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_proposal, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /proposals
   # GET /proposals.json
@@ -66,8 +66,9 @@ class ProposalsController < ApplicationController
 
   def vote
     @vote = @proposal.votes.new
+    @vote.user = current_user
     @vote.answer = params[:answer]
-    @vote.save
+    @vote.save!
 
     respond_to :js
   end
@@ -80,6 +81,9 @@ class ProposalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def proposal_params
-      params.require(:proposal).permit(:title, :content)
+      params.require(:proposal).permit(
+        :title, :content, :city_id, :street, :number, :complement,
+        :neighborhood, :cep
+      )
     end
 end

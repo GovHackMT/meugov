@@ -1,0 +1,4 @@
+<% if @proposal.valid? %>
+$('#votes').html('<%= j render("proposals/votes") %>');
+$('#thermometer').html('<%= j render("proposals/thermometer", total: @proposal.thermometer) %>');
+<% end %>

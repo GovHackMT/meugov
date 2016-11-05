@@ -25,15 +25,13 @@ pt-BR:
 
   layouts:
     application:
-      title: "administri"
+      title: "Meu Gov"
       support: "Atendimento"
       edit_registration: "Alterar meus dados"
       edit_company: "Editar empresa"
       logout: "Sair do sistema"
-      search_q_placeholder: "Buscar"
-      footer_info: "O administri é um serviço da "
-      new_ticket: "Fale conosco"
-      new_ticket_message: "Tem algum problema ou sugestão?"
+      sign_in: "Acessar"
+      sign_up: "Criar conta"
 
   proposals:
     index:
@@ -41,6 +39,8 @@ pt-BR:
       new: "Enviar proposta"
     form:
       address: "Endereço"
+    new:
+      title: "Nova proposta"
 
   comments:
     title: "Comentários"

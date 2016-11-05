@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Meugov</title>
+  <title><%= t '.title' %></title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	<!-- Navigation -->
 	<header class="cd-auto-hide-header">
 		<div class="logo"><a href="#0"><%= image_tag "cd-logo.svg" %></a></div>
@@ -18,12 +19,38 @@
 					Menu
 				</span>
 			</a>
+			</a>
 			<ul id="cd-navigation">
 				<li><a href="#0">Propostas do governo</a></li>
 				<li><a href="#0">Você propõe</a></li>
 			</ul>
+			<% if user_signed_in? %>
+			<div class="dropdown">
+				<button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<%= fa_icon 'user', text: current_user.nickname %>
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+					<li><%= link_to t('.edit_registration'), edit_user_registration_path %></li>
+					<li><%= link_to t('.logout'), destroy_user_session_path, method: 'delete' %></li>
+				</ul>
+			</div>
+			<% else %>
+			<div class="dropdown">
+				<button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<%= fa_icon 'lock' %>
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+          <li><%= link_to t('.sign_in'), new_user_session_path %></li>
+          <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
+				</ul>
+			</div>
+			<% end %>
 		</nav>
 	</header>
+
 	<div class="container"><%= yield %></div>
+
 </body>
 </html>
