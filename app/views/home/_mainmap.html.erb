@@ -12,7 +12,7 @@
 
 							  map = new google.maps.Map(document.getElementById('mainmap'), {
 							    center: center,
-							    scrollwheel: true,
+							    scrollwheel: false,
 							    zoom: 12
 							  });					 
 
@@ -21,7 +21,7 @@
 								
 								
 								var contString90 = '<div id="content">'+
-						      '<h3><strong>Escola Estadual </strong></h3>'+
+						      '<h3><strong>Escola Estadual teste1</strong></h3>'+
 						      '<p>Cidade: teste</p>'+
 						    	'<p>Área de Atuação: Educação</p>'+
 						    	'<div><img src="http://placehold.it/350x150" alt="" /></div>'+
@@ -37,7 +37,7 @@
 							    map: map,
 							    icon: icon90,
 							    position: latLng90,
-							    title: 'nascente teste 4'
+							    title: 'Escola Estadual teste1'
 							  });
 
 							  marker90.addListener('click', function() {
@@ -63,4 +63,24 @@
 						-->
 					</script>
 
-<div id="mainmap"></div>
+<div class="mainmap-container">
+
+		<div class="mainmap-box">
+			<div id="mainmap"></div>
+		</div>
+		<div class="mainmap-list-top">
+			
+			<div class="top-proposals">
+				<div class="top-proposals-item">
+					<div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div>
+					<div class="top-proposals-info">
+						<div class="top-proposals-title"><strong>Escola Estadual Teste 1</strong></div>
+						<div class="top-proposals-meta">9999 Votos <span class="label">75% Positivo</span></div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+</div>
+

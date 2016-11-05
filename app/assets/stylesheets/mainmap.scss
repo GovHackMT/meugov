@@ -1,5 +1,29 @@
+.mainmap-container {
+	.mainmap-header {
+		padding-top: 20px;
+		margin-bottom: 20px;
+		h3 {
+			font-family: $primary-font;
+		}
+	}
+	.mainmap-box {
+		float: left;
+		margin-right: 20px;
+		width: calc(100% - 340px);
+	}
+	.mainmap-list-top {
+		float: left;
+		width: 300px;
+		margin-right: 20px;
+	}
+}
+
+
+
+
 #mainmap {
 	height: 550px;
 	width: 100%;
 	background-color: blue;
 }
+
