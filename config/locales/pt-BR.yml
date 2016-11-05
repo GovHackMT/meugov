@@ -41,3 +41,7 @@ pt-BR:
       new: "Enviar proposta"
     form:
       address: "Endereço"
+
+  comments:
+    new:
+      add: "Adicionar"

@@ -1,0 +1,14 @@
+<% if comment.id? %>
+<div class="media">
+  <div class="media-left">
+    <%= avatar_tag comment.user %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= comment.user.nickname %></h4>
+    <ul class="list-unstyled">
+      <li><%= fa_icon 'calendar', text: comment.created_at %></li>
+    </ul>
+    <%= simple_format comment.content %>
+  </div>
+</div>
+<% end %>

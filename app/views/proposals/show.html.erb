@@ -9,3 +9,7 @@
 <%= avatar_tag @proposal.user %>
 <%= @proposal.user.nickname %>
 
+<div id="comments">
+  <%= render 'comments/new' %>
+  <%= render partial: 'comments/comment', collection: @proposal.comments %>
+</div>

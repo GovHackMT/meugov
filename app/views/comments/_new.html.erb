@@ -1,0 +1,8 @@
+<%= simple_form_for @comment, html: { class: 'form-horizontal' }, remote: true do |f| %>
+  <%= f.input_field :commentable_type, as: :hidden %>
+  <%= f.input_field :commentable_id, as: :hidden %>
+  <div class="form-group">
+  <%= f.input_field :content, rows: 3 %>
+  </div>
+  <%= f.submit t('.add'), class: "btn btn-sm btn-default" %>
+<% end %>
