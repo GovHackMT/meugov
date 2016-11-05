@@ -35,12 +35,10 @@
 			    (function (marker, data) {
 			        google.maps.event.addListener(marker, "click", function (e) {
 			            infoWindow.setContent('<div id="content">'+
-										'<h3><strong>' + data.title + '</strong></h3>'+
-										'<p>Cidade: ' + data.city + '</p>'+
-										'<p>Área de Atuação: ' + data.area + '</p>'+
-										//'<div><img src="' + data.imageUrl + '" alt="" /></div>'+
-										'<hr>'+
-										'<div><a href="' + data.link + '" class="btn btn-primary">Mais Detalhes</a></div>'+
+										'<h4><strong>' + data.title + '</strong></h4>'+
+										'<p><%= fa_icon('map') %> ' + data.city + '</p>'+
+										'<p><%= fa_icon('bookmark') %> ' + data.area + '</p>'+
+										'<div><a href="' + data.link + '" class="btn btn-sm btn-primary">Mais Detalhes</a></div>'+
 										'</div>');
 			            infoWindow.open(map, marker);
 			            map.panTo(myLatlng);
@@ -80,6 +78,7 @@
 				<h3><span class="fa fa-heart-o"></span> Propostar populares</h3>
 			</div>
 
+			<% @popular_proposals.each do |proposal| %>
 			<div class="top-proposals-item">
 				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
 				<div class="top-proposals-info">
@@ -90,17 +89,7 @@
 					<a class="btn btn-primary move-map-btn" data-lat="-15.6027080" data-lng="-56.0975243"><span class="fa fa-map-marker"></span></a>
 				</div>
 			</div>
-
-			<div class="top-proposals-item">
-				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
-				<div class="top-proposals-info">
-					<div class="top-proposals-title"><strong>Escola Estadual Teste 2</strong></div>
-					<div class="top-proposals-meta">243 Votos <span class="label label-warning">50% Positivo</span></div>
-				</div>
-				<div class="top-proposals-actions">
-					<a class="btn btn-primary move-map-btn" data-lat="-15.6027080" data-lng="-56.1976060"><span class="fa fa-map-marker"></span></a>
-				</div>
-			</div>
+			<% end %>
 
 		</div>
 	</div>

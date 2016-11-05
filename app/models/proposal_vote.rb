@@ -3,7 +3,7 @@ class ProposalVote < ActiveRecord::Base
   enum answer: [:yes, :no]
 
   # Associations
-  belongs_to :proposal
+  belongs_to :proposal, counter_cache: true
   belongs_to :user
 
   # Validations

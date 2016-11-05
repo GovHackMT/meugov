@@ -6,7 +6,7 @@ module ProposalsHelper
         lng: proposal.city.longitude,
         title: proposal.title,
         city: proposal.city.name_with_state,
-        area: 'Educação',
+        area: proposal.proposal_category.name,
         icon: 'icon_blue.png',
         link: proposal_path(proposal)
       }
