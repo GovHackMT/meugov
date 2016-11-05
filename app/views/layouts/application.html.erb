@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
 	<!-- Navigation -->
 	<header class="cd-auto-hide-header">
 		<div class="logo"><a href="#0"><%= image_tag "cd-logo.svg" %></a></div>
@@ -17,13 +18,36 @@
 					<em aria-hidden="true"></em>
 					Menu
 				</span>
+			</a> 
 			</a>
 			<ul id="cd-navigation">
 				<li><a href="#0">Propostas do governo</a></li>
-				<li><a href="#0">Você propõe</a></li>
+				<li><a href="#0">Você propõe</a></li>				
 			</ul>
-		</nav>
-	</header>
-	<div class="container"><%= yield %></div>
+			<div class="dropdown">
+				<button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<%= fa_icon 'user', text: 'Cesar' %>
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+					<li><a href="#">Alterar</a></li>
+					<li><a href="#">Sair</a></li>
+				</ul>
+			</div>
+			<div class="dropdown">
+				<button class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<%= fa_icon 'lock' %>
+					<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+					<li><a href="#">Acessar</a></li>
+					<li><a href="#">Criar conta</a></li>
+				</ul>
+			</div>
+		</nav> 
+	</header> 
+
+	<%= yield %>
+
 </body>
 </html>
