@@ -66,8 +66,9 @@ class ProposalsController < ApplicationController
 
   def vote
     @vote = @proposal.votes.new
+    @vote.user = current_user
     @vote.answer = params[:answer]
-    @vote.save
+    @vote.save!
 
     respond_to :js
   end

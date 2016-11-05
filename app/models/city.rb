@@ -3,4 +3,8 @@ class City < ActiveRecord::Base
   belongs_to :state
   has_many :users
   has_many :proposals
+
+  def name_with_state
+    "#{name}-#{state.acronym}"
+  end
 end
