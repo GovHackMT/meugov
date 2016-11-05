@@ -16,6 +16,20 @@
       <h4 class="media-heading"><%= @proposal.user.nickname %></h4>
     </div>
   </div>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-3"><%= link_to fa_icon('thumbs-o-up'), vote_proposal_path(@proposal, answer: 'yes'), remote: true, method: :post %></div>
+        <div class="col-md-3" id="yes"><%= @proposal.total_yes %></div>
+        <div class="col-md-3"><%= link_to fa_icon('thumbs-o-down'), vote_proposal_path(@proposal, answer: 'no'), remote: true, method: :post %></div>
+        <div class="col-md-3"><%= @proposal.total_no %></div>
+      </div>
+    </div>
+    <div class="col-md-8"><%= @proposal.thermometer %></div>
+  </div>
 </div>
 
 <h1><%= t 'comments.title' %></h1>
