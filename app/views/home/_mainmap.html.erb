@@ -1,86 +1,128 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAao9iIgQWyBdSNN1DP1fm4F6uZK1WYrqg&libraries=geometry,places"></script>
 
 <script>
-						<!--
-						jQuery(function() {
+	<!--
+	jQuery(function() {
 
-							var map = null;
+		var map = null;
 
-							function initMap() {
+		var dataLocations = [
+			{
+				"lat": '-15.6025961',
+				"lng": '-56.0975243',
+				"title": 'Escola Estadual Teste 1',
+				"city": 'Cuiabá',
+				"area": 'Educação',
+				"imageUrl": 'http://placehold.it/350x150',
+				"icon": 'icon_blue.png',
+				"link": '#'
+			},
+			{
+				"lat": '-15.6027080',
+				"lng": '-56.1976060',
+				"title": 'Escola Estadual Teste 2',
+				"city": 'Cuiabá',
+				"area": 'Educação',
+				"imageUrl": 'http://placehold.it/350x150',
+				"icon": 'icon_red.png',
+				"link": '#'
+			}
+		]
 
-								var center = {lat:-15.6025961, lng:-56.0975243};
+		function initMap() {
 
-							  map = new google.maps.Map(document.getElementById('mainmap'), {
-							    center: center,
-							    scrollwheel: false,
-							    zoom: 12
-							  });					 
+			var center = {lat:-15.6025961, lng:-56.0975243};
 
-								
-								var latLng90 = {lat:-15.6025961, lng:-56.0975243};
-								
-								
-								var contString90 = '<div id="content">'+
-						      '<h3><strong>Escola Estadual teste1</strong></h3>'+
-						      '<p>Cidade: teste</p>'+
-						    	'<p>Área de Atuação: Educação</p>'+
-						    	'<div><img src="http://placehold.it/350x150" alt="" /></div>'+
-						    	'<hr>'+
-						    	'<div><a href="#" class="btn btn-primary">Mais Detalhes</a></div>'+
-						      '</div>';
-								var infowindow90 = new google.maps.InfoWindow({
-									content: contString90								});
+		  map = new google.maps.Map(document.getElementById('mainmap'), {
+		    center: center,
+		    scrollwheel: false,
+		    zoom: 12
+		  });
 
-								var icon90 = '/assets/icon_blue.png';
+			//Create and open InfoWindow.
+			var infoWindow = new google.maps.InfoWindow();
 
-							  var marker90 = new google.maps.Marker({
-							    map: map,
-							    icon: icon90,
-							    position: latLng90,
-							    title: 'Escola Estadual teste1'
-							  });
+			for (var i = 0; i < dataLocations.length; i++) {
+			    var data = dataLocations[i];
+			    var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+			    var marker = new google.maps.Marker({
+			        position: myLatlng,
+			        map: map,
+			        title: data.title,
+			        icon: '/assets/' + data.icon,
+			    });
 
-							  marker90.addListener('click', function() {
-    							infowindow90.open(map, marker90);
-    							map.panTo(latLng90);
-  							});
-							}
+			    // Click function at the markers
+			    (function (marker, data) {
+			        google.maps.event.addListener(marker, "click", function (e) {
+			            infoWindow.setContent('<div id="content">'+
+										'<h3><strong>' + data.title + '</strong></h3>'+
+										'<p>Cidade: ' + data.city + '</p>'+
+										'<p>Área de Atuação: ' + data.area + '</p>'+
+										'<div><img src="' + data.imageUrl + '" alt="" /></div>'+
+										'<hr>'+
+										'<div><a href="' + data.link + '" class="btn btn-primary">Mais Detalhes</a></div>'+
+										'</div>');
+			            infoWindow.open(map, marker);
+			            map.panTo(myLatlng);
+			        });
+			    })(marker, data);
+			}
 
-							google.maps.event.addDomListener(window, "load", initMap);							
+		}
 
-							function moveToLocation(lat, lng){
-							    var center = new google.maps.LatLng(lat, lng);
-							    map.panTo(center);
-							}
+		google.maps.event.addDomListener(window, "load", initMap);							
 
-							// jQuery('.centermap').click(function(){
-							// 	var latVar = jQuery(this).data("lat");
-							// 	var lngVar = jQuery(this).data("lng");
-							// 	moveToLocation(latVar, lngVar);
-							// })
+		// function moveToLocation(lat, lng){
+		//     var center = new google.maps.LatLng(lat, lng);
+		//     map.panTo(center);
+		// }
 
-						});
-						-->
-					</script>
+		$('.move-map-btn').click(function(){
+				var lat = $(this).data('lat');
+				var lng = $(this).data('lng');
+				var center = new google.maps.LatLng(lat, lng);
+		    map.panTo(center);
+		})
 
-<div class="mainmap-container">
 
-		<div class="mainmap-box">
-			<div id="mainmap"></div>
-		</div>
-		<div class="mainmap-list-top">
-			
-			<div class="top-proposals">
-				<div class="top-proposals-item">
-					<div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div>
-					<div class="top-proposals-info">
-						<div class="top-proposals-title"><strong>Escola Estadual Teste 1</strong></div>
-						<div class="top-proposals-meta">9999 Votos <span class="label">75% Positivo</span></div>
-					</div>
+	});
+	-->
+</script>
+
+<div class="row">
+	<div class="col-md-9">
+		<div id="mainmap"></div>
+	</div>
+	<div class="col-md-3">
+		<div class="top-proposals">
+
+			<div class="top-proposals-header">
+				<h3><span class="fa fa-heart-o"></span> Propostar populares</h3>
+			</div>
+
+			<div class="top-proposals-item">
+				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
+				<div class="top-proposals-info">
+					<div class="top-proposals-title"><strong>Escola Estadual Teste 1</strong></div>
+					<div class="top-proposals-meta">9999 Votos <span class="label label-success">75% Positivo</span></div>
+				</div>
+				<div class="top-proposals-actions">
+					<a class="btn btn-primary move-map-btn" data-lat="-15.6027080" data-lng="-56.0975243"><span class="fa fa-map-marker"></span></a>
+				</div>
+			</div>
+
+			<div class="top-proposals-item">
+				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
+				<div class="top-proposals-info">
+					<div class="top-proposals-title"><strong>Escola Estadual Teste 2</strong></div>
+					<div class="top-proposals-meta">243 Votos <span class="label label-warning">50% Positivo</span></div>
+				</div>
+				<div class="top-proposals-actions">
+					<a class="btn btn-primary move-map-btn" data-lat="-15.6027080" data-lng="-56.1976060"><span class="fa fa-map-marker"></span></a>
 				</div>
 			</div>
 
 		</div>
-
+	</div>
 </div>
-

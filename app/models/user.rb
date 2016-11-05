@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Enums
+  enum role: [:citizen, :government, :admin]
+
   # Associations
   belongs_to :city
 
