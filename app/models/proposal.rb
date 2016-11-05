@@ -18,6 +18,8 @@ class Proposal < ActiveRecord::Base
 
   # Scopes
   scope :popular, -> { order('proposal_votes_count DESC') }
+  scope :government, -> { where('users.role = ?', User.roles[:government]) }
+  scope :society, -> { where('users.role <> ?', User.roles[:government]) }
 
   def self.associations
     joins(:city, :user, :proposal_category).includes(:city, :user, :proposal_category)
@@ -27,7 +29,9 @@ class Proposal < ActiveRecord::Base
     filters = associations
     filters = filters.where("proposals.title LIKE '%%%s%%' OR proposals.content LIKE '%%%s%%'", params[:q], params[:q]) if params[:q].present?
     filters = filters.where(city_id: params[:city_id]) if params[:city_id].present?
-    filters = filters.where("users.role = ?", params[:role]) if params[:role].present?
+    filters = filters.government if params[:role] == 'government'
+    filters = filters.society if params[:role] == 'society'
+
     filters = filters.paginate(page: params[:page])
     filters
   end

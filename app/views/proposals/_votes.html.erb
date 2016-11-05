@@ -9,9 +9,9 @@
   <% else %>
   <div class="row">
     <div class="col-md-3"><%= link_to fa_icon('thumbs-o-up'), vote_proposal_path(proposal, answer: 'yes'), remote: true, method: :post %></div>
-    <div class="col-md-3" id="yes"><%= @proposal.total_yes %></div>
+    <div class="col-md-3" id="yes"><%= proposal.total_yes %></div>
     <div class="col-md-3"><%= link_to fa_icon('thumbs-o-down'), vote_proposal_path(proposal, answer: 'no'), remote: true, method: :post %></div>
-    <div class="col-md-3" id="no"><%= @proposal.total_no %></div>
+    <div class="col-md-3" id="no"><%= proposal.total_no %></div>
   </div>
   <% end %>
 <% else %>
