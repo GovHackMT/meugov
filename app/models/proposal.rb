@@ -16,6 +16,9 @@ class Proposal < ActiveRecord::Base
   validates :city_id, presence: true
   validates :proposal_category_id, presence: true
 
+  # Scopes
+  scope :popular, order('proposal_votes_count DESC')
+
   def self.associations
     joins(:city, :user, :proposal_category).includes(:city, :user, :proposal_category)
   end
@@ -29,8 +32,9 @@ class Proposal < ActiveRecord::Base
     filters
   end
 
-  def thermometer
-    total_votes > 0 ? ((total_yes / total_votes) * 100) : 0
+  def update_thermometer
+    self.thermometer = total_votes > 0 ? ((total_yes / total_votes) * 100) : 0
+    self.save
   end
 
   def total_votes

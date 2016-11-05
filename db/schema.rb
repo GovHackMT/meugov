@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105203736) do
+ActiveRecord::Schema.define(version: 20161105215952) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "state_id",   limit: 4
@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 20161105203736) do
     t.integer  "city_id",              limit: 4
     t.integer  "status",               limit: 4,     default: 0
     t.integer  "proposal_category_id", limit: 4
+    t.float    "thermometer",          limit: 24
+    t.integer  "proposal_votes_count", limit: 4,     default: 0
   end
 
   add_index "proposals", ["city_id"], name: "index_proposals_on_city_id", using: :btree

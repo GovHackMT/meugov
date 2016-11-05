@@ -71,6 +71,8 @@ class ProposalsController < ApplicationController
     @vote.answer = params[:answer]
     @vote.save!
 
+    @proposal.update_thermometer
+
     respond_to :js
   end
 
