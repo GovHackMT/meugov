@@ -1,5 +1,9 @@
 class Proposal < ActiveRecord::Base
+  # Enuns
+  enum status: [:open]
+
   # Associations
+  belongs_to :proposal_category
   belongs_to :user
   belongs_to :city
   has_many :comments, as: :commentable
@@ -10,9 +14,10 @@ class Proposal < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
   validates :city_id, presence: true
+  validates :proposal_category_id, presence: true
 
   def self.associations
-    joins(:city, :user).includes(:city, :user)
+    joins(:city, :user, :proposal_category).includes(:city, :user, :proposal_category)
   end
 
   def self.search(params)

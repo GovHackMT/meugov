@@ -84,7 +84,7 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(
         :title, :content, :city_id, :street, :number, :complement,
-        :neighborhood, :cep
+        :neighborhood, :cep, :proposal_category_id
       )
     end
 end

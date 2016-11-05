@@ -253,6 +253,7 @@ pt-BR:
         last_sign_in_at: "Último acesso"
 
       proposal:
+        proposal_category_id: "Categoria"
         title: "Título"
         content: "Conteúdo"
         user: "Autor"
