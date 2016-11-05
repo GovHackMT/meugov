@@ -1,5 +1,5 @@
 class ProposalsController < ApplicationController
-  before_action :set_proposal, only: [:show, :edit, :update, :destroy]
+  before_action :set_proposal, only: [:show, :edit, :update, :destroy, :vote]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /proposals
@@ -62,6 +62,14 @@ class ProposalsController < ApplicationController
       format.html { redirect_to proposals_url, notice: t('destroy_notice') }
       format.json { head :no_content }
     end
+  end
+
+  def vote
+    @vote = @proposal.votes.new
+    @vote.answer = params[:answer]
+    @vote.save
+
+    respond_to :js
   end
 
   private
