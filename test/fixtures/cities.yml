@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state_id: 
+  name: MyString
+  population: 1
+  pib: 9.99
+
+two:
+  state_id: 
+  name: MyString
+  population: 1
+  pib: 9.99
