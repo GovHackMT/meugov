@@ -6,7 +6,7 @@
 
   <fieldset>
     <legend><%= t '.address' %></legend>
-    <%= f.input :city_id, collection: City.joins(:state).includes(:state).order(:name), label_method: :name_with_state %>
+    <%= f.input :city_id, collection: City.avaliable, label_method: :name_with_state %>
     <%= f.input :cep %>
     <%= f.input :street %>
     <%= f.input :number %>

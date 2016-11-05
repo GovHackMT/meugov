@@ -11,6 +11,14 @@ class Proposal < ActiveRecord::Base
   validates :content, presence: true
   validates :city_id, presence: true
 
+  def associations
+    includes(:city)
+  end
+
+  def search(params)
+
+  end
+
   def thermometer
     total_votes > 0 ? ((total_yes / total_votes) * 100) : 0
   end

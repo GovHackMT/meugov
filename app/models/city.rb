@@ -7,4 +7,8 @@ class City < ActiveRecord::Base
   def name_with_state
     "#{name}-#{state.acronym}"
   end
+
+  def self.avaliable
+    joins(:state).includes(:state).order(:name)
+  end
 end

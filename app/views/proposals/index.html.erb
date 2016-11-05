@@ -1,17 +1,16 @@
-<%= link_to t('proposals.index.new'), new_proposal_path, class: 'btn btn-primary' %>
-
 <h1><%= t '.title' %></h1>
-<% if @proposals.size > 0 %>
-  <% @proposals.each do |proposal| %>
-  <div class="media">
-    <div class="media-left">
-      <%= avatar_tag proposal.user %>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><%= link_to proposal.title, proposal %></h4>
-      <%= fa_icon 'calendar', text: l(proposal.created_at) %>
-      <%= simple_format proposal.content %>
-    </div>
+<div class="row">
+  <div class="col-md-9" id="listing"><%= render "listing" %></div>
+  <div class="col-md-3">
+    <%= form_tag proposals_path, method: :get, remote: true  do |f| %>
+      <div class="form-group">
+        <%= text_field_tag :q, params[:q], class: "form-control", placeholder: Proposal.human_attribute_name(:q) %>
+      </div>
+      <div class="form-group">
+        <%= select_tag :city_id, options_from_collection_for_select(City.avaliable, 'id', 'name_with_state', params[:city_id]), prompt: Proposal.human_attribute_name(:city_id), class: "form-control" %>
+      </div>
+
+      <%= button_tag fa_icon('filter', text: t('filters_submit')), class: 'btn btn-primary' %>
+    <% end %>
   </div>
-  <% end %>
-<% end %>
+</div>
