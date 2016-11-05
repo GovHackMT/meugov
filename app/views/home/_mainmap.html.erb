@@ -1,0 +1,66 @@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAao9iIgQWyBdSNN1DP1fm4F6uZK1WYrqg&libraries=geometry,places"></script>
+
+<script>
+						<!--
+						jQuery(function() {
+
+							var map = null;
+
+							function initMap() {
+
+								var center = {lat:-15.6025961, lng:-56.0975243};
+
+							  map = new google.maps.Map(document.getElementById('mainmap'), {
+							    center: center,
+							    scrollwheel: true,
+							    zoom: 12
+							  });					 
+
+								
+								var latLng90 = {lat:-15.6025961, lng:-56.0975243};
+								
+								
+								var contString90 = '<div id="content">'+
+						      '<h3><strong>Escola Estadual </strong></h3>'+
+						      '<p>Cidade: teste</p>'+
+						    	'<p>Área de Atuação: Educação</p>'+
+						    	'<div><img src="http://placehold.it/350x150" alt="" /></div>'+
+						    	'<hr>'+
+						    	'<div><a href="#" class="btn btn-primary">Mais Detalhes</a></div>'+
+						      '</div>';
+								var infowindow90 = new google.maps.InfoWindow({
+									content: contString90								});
+
+								var icon90 = '/assets/icon_blue.png';
+
+							  var marker90 = new google.maps.Marker({
+							    map: map,
+							    icon: icon90,
+							    position: latLng90,
+							    title: 'nascente teste 4'
+							  });
+
+							  marker90.addListener('click', function() {
+    							infowindow90.open(map, marker90);
+    							map.panTo(latLng90);
+  							});
+							}
+
+							google.maps.event.addDomListener(window, "load", initMap);							
+
+							function moveToLocation(lat, lng){
+							    var center = new google.maps.LatLng(lat, lng);
+							    map.panTo(center);
+							}
+
+							// jQuery('.centermap').click(function(){
+							// 	var latVar = jQuery(this).data("lat");
+							// 	var lngVar = jQuery(this).data("lng");
+							// 	moveToLocation(latVar, lngVar);
+							// })
+
+						});
+						-->
+					</script>
+
+<div id="mainmap"></div>
