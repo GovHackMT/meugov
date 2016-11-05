@@ -11,6 +11,14 @@
         <li><%= fa_icon 'map', text: proposal.city.name_with_state %>
       </ul>
       <%= simple_format proposal.content %>
+
+      <div class="row">
+        <div class="col-md-6" id="votes"><%= render 'votes', proposal: proposal %></div>
+        <div class="col-md-6">
+          <strong>Aprovação</strong>
+          <div id="thermometer"><%= render 'thermometer', total: proposal.thermometer %></div>
+        </div>
+      </div>
     </div>
   </div>
   <% end %>

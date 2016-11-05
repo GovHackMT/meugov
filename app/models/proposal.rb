@@ -12,13 +12,14 @@ class Proposal < ActiveRecord::Base
   validates :city_id, presence: true
 
   def self.associations
-    joins(:city).includes(:city)
+    joins(:city, :user).includes(:city, :user)
   end
 
   def self.search(params)
     filters = associations
     filters = filters.where("proposals.title LIKE '%%%s%%' OR proposals.content LIKE '%%%s%%'", params[:q], params[:q]) if params[:q].present?
     filters = filters.where(city_id: params[:city_id]) if params[:city_id].present?
+    filters = filters.where("users.role = ?", params[:role]) if params[:role].present?
     filters = filters.paginate(page: params[:page])
     filters
   end

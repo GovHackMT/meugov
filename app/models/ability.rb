@@ -5,8 +5,7 @@ class Ability
     user ||= User.new
 
     if user.admin?
-        can :manage, State
-        can :manage, City
+        can :manage, :all
     elsif user.government?
         can [:read, :create, :update], Proposal
         can [:read, :create, :update], Comment
