@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :properties
+  resources :property_categories
   resources :proposal_categories
   root 'home#index'
 

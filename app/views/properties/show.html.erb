@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Property category:</strong>
+  <%= @property.property_category %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @property.name %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @property.street %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @property.number %>
+</p>
+
+<p>
+  <strong>Complement:</strong>
+  <%= @property.complement %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @property.neighborhood %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @property.cep %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @property.city %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @property.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @property.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
