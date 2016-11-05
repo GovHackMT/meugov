@@ -1,0 +1,10 @@
+== Meu Gov
+
+Projeto para ajudar o governo a se comunicar com a sociedade.
+
+Participantes:
+* John W. M. Carneiro (@johnwmcarneiro)
+* Tiago Donatti (@proartti)
+* Cesar Delgadillo (@cesardelgadillo)
+* Jozimar Santos (@jozimarso)
+* Luciano Santos (@lucianosilvasantos)
