@@ -17,7 +17,7 @@ class Proposal < ActiveRecord::Base
   validates :proposal_category_id, presence: true
 
   # Scopes
-  scope :popular, order('proposal_votes_count DESC')
+  scope :popular, -> { order('proposal_votes_count DESC') }
 
   def self.associations
     joins(:city, :user, :proposal_category).includes(:city, :user, :proposal_category)
