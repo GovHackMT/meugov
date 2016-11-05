@@ -5,7 +5,7 @@ class ReportPropertiesCitiesController < ApplicationController
   def result
     @cities = nil
     if params[:property_category_id].present?
-      @cities =
+      @cities = City.report_properties params[:property_category_id]
     end
   end
 end

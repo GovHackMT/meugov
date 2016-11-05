@@ -14,7 +14,12 @@ class City < ActiveRecord::Base
   end
 
   def self.report_properties(property_category_id)
-    filters = self
+    filters = select("cities.id, cities.name, cities.population, cities.pib, count(properties.id) as total_properties, (count(properties.id)/cities.population) as properties_population")
     filters = filters.joins(:state).includes(:state)
+    filters = filters.joins("LEFT JOIN properties ON properties.city_id = cities.id")
+    filters = filters.where("properties.property_category_id = ?", property_category_id)
+    filters = filters.group("cities.id")
+    filters = filters.order("properties_population DESC")
+    filters
   end
 end

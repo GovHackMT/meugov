@@ -1,7 +1,8 @@
 <% if @cities.nil? %>
   <p>Por favor informe a categoria da propriedade</p>
 <% else %>
-  <table>
+  <hr />
+  <table class="table table-bordered">
     <thead>
       <tr>
         <td>Ranking</td>
@@ -13,9 +14,17 @@
       </tr>
     </thead>
     <tbody>
+      <%
+      @cities.each_with_index do |city, i| %>
       <tr>
-        <td></td>
+        <td><%= (i+1) %></td>
+        <td><%= city.name %></td>
+        <td><%= city.population %></td>
+        <td><%= city.pib %></td>
+        <td><%= city.total_properties %></td>
+        <td><%= city.properties_population %></td>
       </tr>
+      <% end %>
     </tbody>
   </table>
 <% end %>
