@@ -120,6 +120,10 @@ $L:     1024px;
 
 body {
 	font-family: $primary-font;
+	padding-top: $header-height-small;
+	@include MQ(L) {
+		padding-top: $header-height;
+	}
 }
 
 // Navigation
