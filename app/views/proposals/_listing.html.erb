@@ -14,4 +14,8 @@
     </div>
   </div>
   <% end %>
+<% else %>
+  <p>Nenhuma proposta encontrada</p>
 <% end %>
+
+<%= pagination_links @proposals %>

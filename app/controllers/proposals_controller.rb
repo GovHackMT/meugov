@@ -1,11 +1,12 @@
 class ProposalsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  authorize_resource
   before_action :set_proposal, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /proposals
   # GET /proposals.json
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.search(params)
   end
 
   # GET /proposals/1

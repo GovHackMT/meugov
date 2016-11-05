@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  authorize_resource
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
