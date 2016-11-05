@@ -48,6 +48,7 @@ end
 gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
