@@ -6,28 +6,7 @@
 
 		var map = null;
 
-		var dataLocations = [
-			{
-				"lat": '-15.6025961',
-				"lng": '-56.0975243',
-				"title": 'Escola Estadual Teste 1',
-				"city": 'Cuiabá',
-				"area": 'Educação',
-				"imageUrl": 'http://placehold.it/350x150',
-				"icon": 'icon_blue.png',
-				"link": '#'
-			},
-			{
-				"lat": '-15.6027080',
-				"lng": '-56.1976060',
-				"title": 'Escola Estadual Teste 2',
-				"city": 'Cuiabá',
-				"area": 'Educação',
-				"imageUrl": 'http://placehold.it/350x150',
-				"icon": 'icon_red.png',
-				"link": '#'
-			}
-		]
+		var dataLocations = <%= proposals_as_json(@proposals) %>;
 
 		function initMap() {
 
@@ -59,7 +38,7 @@
 										'<h3><strong>' + data.title + '</strong></h3>'+
 										'<p>Cidade: ' + data.city + '</p>'+
 										'<p>Área de Atuação: ' + data.area + '</p>'+
-										'<div><img src="' + data.imageUrl + '" alt="" /></div>'+
+										//'<div><img src="' + data.imageUrl + '" alt="" /></div>'+
 										'<hr>'+
 										'<div><a href="' + data.link + '" class="btn btn-primary">Mais Detalhes</a></div>'+
 										'</div>');
@@ -71,7 +50,7 @@
 
 		}
 
-		google.maps.event.addDomListener(window, "load", initMap);							
+		google.maps.event.addDomListener(window, "load", initMap);
 
 		// function moveToLocation(lat, lng){
 		//     var center = new google.maps.LatLng(lat, lng);

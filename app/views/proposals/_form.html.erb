@@ -1,6 +1,7 @@
 <%= simple_form_for(@proposal) do |f| %>
   <%= f.error_notification %>
 
+  <%= f.input :proposal_category_id, collection: ProposalCategory.order(:name) %>
   <%= f.input :title %>
   <%= f.input :content %>
 
