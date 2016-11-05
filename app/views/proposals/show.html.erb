@@ -30,7 +30,14 @@
 </div>
 
 <h1><%= t 'comments.title' %></h1>
-<%= render 'comments/new' %>
+<% if user_signed_in? %>
+  <%= render 'comments/new' %>
+<% else %>
+  <p>
+    Para comentar você deve realizar o <%= link_to 'login', new_user_session_path %> no sistema.
+  </p>
+<% end %>
+
 <div id="comments">
   <%= render partial: 'comments/comment', collection: @proposal.comments %>
 </div>

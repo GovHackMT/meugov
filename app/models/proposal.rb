@@ -11,6 +11,18 @@ class Proposal < ActiveRecord::Base
   validates :content, presence: true
   validates :city_id, presence: true
 
+  def self.associations
+    joins(:city).includes(:city)
+  end
+
+  def self.search(params)
+    filters = associations
+    filters = filters.where("proposals.title LIKE '%%%s%%' OR proposals.content LIKE '%%%s%%'", params[:q], params[:q]) if params[:q].present?
+    filters = filters.where(city_id: params[:city_id]) if params[:city_id].present?
+    filters = filters.paginate(page: params[:page])
+    filters
+  end
+
   def thermometer
     total_votes > 0 ? ((total_yes / total_votes) * 100) : 0
   end

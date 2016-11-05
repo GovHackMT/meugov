@@ -1,0 +1,21 @@
+<% if @proposals.size > 0 %>
+  <% @proposals.each do |proposal| %>
+  <div class="media">
+    <div class="media-left">
+      <%= avatar_tag proposal.user %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= link_to proposal.title, proposal %></h4>
+      <ul class="list-inline">
+        <li><%= fa_icon 'calendar', text: l(proposal.created_at) %></li>
+        <li><%= fa_icon 'map', text: proposal.city.name_with_state %>
+      </ul>
+      <%= simple_format proposal.content %>
+    </div>
+  </div>
+  <% end %>
+<% else %>
+  <p>Nenhuma proposta encontrada</p>
+<% end %>
+
+<%= pagination_links @proposals %>
