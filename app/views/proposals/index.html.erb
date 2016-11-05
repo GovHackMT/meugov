@@ -8,7 +8,7 @@
     <%= avatar_tag proposal.user %>
   </div>
   <div class="media-body">
-    <h4 class="media-heading"><%= proposal.title %></h4>
+    <h4 class="media-heading"><%= link_to proposal.title, proposal %></h4>
     <%= fa_icon 'calendar', text: l(proposal.created_at) %>
     <%= simple_format proposal.content %>
   </div>
