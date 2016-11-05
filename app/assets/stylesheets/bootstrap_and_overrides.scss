@@ -39,6 +39,7 @@ h1, h2, h3 {
 .cd-auto-hide-header .nav-trigger {
 	position: absolute;
 	@include center(y);
+    z-index: 1;
 }
 
 .cd-auto-hide-header .logo {
@@ -189,19 +190,27 @@ h1, h2, h3 {
 		padding: 0;
 		background-color: transparent;
 		box-shadow: none;
-		button {
-			background: none;
-			border: 0;
-			font-size: 1.6rem;
-			line-height: normal;
-			color: #FFF;
-			margin-left: 1.5rem;
-		}
+        button {
+            background: none;
+            border: 0;
+            font-size: 1.6rem;
+            line-height: normal;
+            color: $color-3;
+            text-decoration: none;
+            margin-right: 50px;
+            margin-top: 15px;
+		     @include MQ(L) {            
+                margin: 0 0 0 1.5rem;
+                &:hover {
+                    color: $color-2;
+                }
+            }
+        }      
 	}
 }
 
-.nav-open .cd-primary-nav ul, 
-.cd-primary-nav ul:target {
+.nav-open .cd-primary-nav #cd-navigation, 
+.cd-primary-nav #cd-navigation:target {
 	/* 
 		show primary nav - mobile only 
 		:target is used to show navigation on no-js devices
@@ -217,7 +226,6 @@ h1, h2, h3 {
 .propostas-home {
 	padding: 60px 0;
     .proposta{
-        margin-bottom: 25px;
         .proposta-section {
             width: 100%;
             height: auto;
@@ -227,16 +235,6 @@ h1, h2, h3 {
             border-radius: 5px;
             position: relative;
             border: 1px solid #fff;
-            &:after {
-                top: 100%;
-                left: 50px;
-                border: solid transparent;
-                content: " ";
-                position: absolute;
-                border-top-color: #fff;
-                border-width: 15px;
-                margin-left: -15px;
-            }
             h3 {
                 margin: 0;
             }
@@ -244,7 +242,6 @@ h1, h2, h3 {
         .proposta-desc {
             margin-top: 20px;
             text-align:left;
-            padding-left: 15px;
             i {
                 border: 1px solid #f5f5f5;
                 border-radius: 50%;
@@ -277,10 +274,6 @@ h1, h2, h3 {
             .proposta-section{
                 border-color: #5CB85C;
                 color: #449d44;
-                background-color: rgba(92, 184, 92, 0.1);
-                &:after{
-                    border-top-color: #5CB85C;
-                }
                 h3 {
                     a {
                         color: #5cb85c;                
@@ -303,10 +296,6 @@ h1, h2, h3 {
             .proposta-section{
                 border-color: #F0AD4E;
                 color: #d58512;
-                background-color: rgba(240, 173, 78, 0.1);
-                &:after{
-                    border-top-color: #F0AD4E;
-                }
                 h3 {
                     a {
                         color: #F0AD4E;                
@@ -328,10 +317,6 @@ h1, h2, h3 {
             .proposta-section{
                 border-color: #D9534F;
                 color: #c9302c;
-                background-color: rgba(217, 83, 79, 0.1);
-                &:after{
-                    border-top-color: #D9534F;
-                }
                  h3 {
                     a {
                         color: #D9534F;                
