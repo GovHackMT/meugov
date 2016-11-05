@@ -82,7 +82,7 @@
 			<div class="top-proposals-item">
 				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
 				<div class="top-proposals-info">
-					<div class="top-proposals-title"><strong><%= proposal.title %></strong></div>
+					<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal %></strong></div>
 					<div class="top-proposals-meta"><%= proposal.proposal_votes_count %> Votos <span class="label label-success"><%= proposal.thermometer %>% Positivo</span></div>
 				</div>
 				<div class="top-proposals-actions">
