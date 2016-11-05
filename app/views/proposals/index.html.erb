@@ -1,0 +1,17 @@
+<%= link_to t('proposals.index.new'), new_proposal_path, class: 'btn btn-primary' %>
+
+<h1><%= t '.title' %></h1>
+<% if @proposals.size > 0 %>
+  <% @proposals.each do |proposal| %>
+  <div class="media">
+  <div class="media-left">
+    <%= avatar_tag proposal.user %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to proposal.title, proposal %></h4>
+    <%= fa_icon 'calendar', text: l(proposal.created_at) %>
+    <%= simple_format proposal.content %>
+  </div>
+</div>
+  <% end %>
+<% end %>

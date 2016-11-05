@@ -1,0 +1,11 @@
+<h1 class="page-header"><%= @proposal.title %></h1>
+<ul class="list-unstyled">
+  <li><%= fa_icon 'calendar', text: l(@proposal.created_at) %></li>
+</ul>
+<div class="">
+  <%= @proposal.content %>
+</div>
+
+<%= avatar_tag @proposal.user %>
+<%= @proposal.user.nickname %>
+
