@@ -2,7 +2,7 @@
 
 <h1>Listing Proposals</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -17,10 +17,7 @@
       <tr>
         <td><%= proposal.title %></td>
         <td><%= proposal.content %></td>
-        <td><%= proposal.user %></td>
-        <td><%= link_to 'Show', proposal %></td>
-        <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
-        <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= proposal.user.nickname %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,3 +26,18 @@
 <br>
 
 <%= link_to 'New Proposal', new_proposal_path %>
+
+<h1><%= t '.title' %></h1>
+<% if @proposals.size > 0 %>
+  <% @proposals.each do |proposal| %>
+  <div class="media">
+  <div class="media-left">
+    <%= avatar_tag proposal.user %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= proposal.title %></h4>
+    <%= simple_format proposal.content %>
+  </div>
+</div>
+  <% end %>
+<% end %>

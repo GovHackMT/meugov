@@ -1,0 +1,42 @@
+pt-BR:
+  new_record: "Novo registro"
+  add: "Adicionar"
+  save: "Salvar"
+  select: 'Selecione'
+  back: 'Voltar'
+  show: 'Detalhes'
+  print: 'Imprimir'
+  edit: 'Editar'
+  destroy: 'Excluir'
+  cancel: 'Cancelar'
+  destroy_are_you_sure: 'Você tem certeza que deseja excluir?'
+  are_you_sure: "Você tem certeza?"
+  "true": "Sim"
+  "false": "Não"
+  filters: "Filtros"
+  filters_submit: "Buscar"
+  result: "Resultado"
+  listing: "Listagem"
+  no_record_found: "Nenhum registro encontrado."
+  read_more: "Ver mais"
+  create_notice: "Registro inserido com sucesso!"
+  update_notice: "Registro atualizado com sucesso!"
+  destroy_notice: "Registro excluído com sucesso!"
+
+  layouts:
+    application:
+      title: "administri"
+      support: "Atendimento"
+      edit_registration: "Alterar meus dados"
+      edit_company: "Editar empresa"
+      logout: "Sair do sistema"
+      search_q_placeholder: "Buscar"
+      footer_info: "O administri é um serviço da "
+      new_ticket: "Fale conosco"
+      new_ticket_message: "Tem algum problema ou sugestão?"
+
+  proposals:
+    index:
+      title: "Propostas"
+    form:
+      address: "Endereço"

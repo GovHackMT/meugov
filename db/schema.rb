@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105134603) do
+ActiveRecord::Schema.define(version: 20161105140917) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "state_id",   limit: 4
@@ -37,13 +37,20 @@ ActiveRecord::Schema.define(version: 20161105134603) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "proposals", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "content",    limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",        limit: 255
+    t.text     "content",      limit: 65535
+    t.integer  "user_id",      limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "street",       limit: 255
+    t.string   "number",       limit: 255
+    t.string   "complement",   limit: 255
+    t.string   "neighborhood", limit: 255
+    t.string   "cep",          limit: 255
+    t.integer  "city_id",      limit: 4
   end
 
+  add_index "proposals", ["city_id"], name: "index_proposals_on_city_id", using: :btree
   add_index "proposals", ["user_id"], name: "index_proposals_on_user_id", using: :btree
 
   create_table "states", force: :cascade do |t|
@@ -66,8 +73,11 @@ ActiveRecord::Schema.define(version: 20161105134603) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "name",                   limit: 255
+    t.integer  "city_id",                limit: 4
   end
 
+  add_index "users", ["city_id"], name: "index_users_on_city_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
