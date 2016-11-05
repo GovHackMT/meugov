@@ -1,15 +1,25 @@
-<h1 class="page-header"><%= @proposal.title %></h1>
-<ul class="list-unstyled">
-  <li><%= fa_icon 'calendar', text: l(@proposal.created_at) %></li>
-</ul>
-<div class="">
-  <%= @proposal.content %>
+<div class="jumbotron">
+  <h1><%= @proposal.title %></h1>
+  <ul class="list-unstyled">
+    <li><%= fa_icon 'calendar', text: l(@proposal.created_at) %></li>
+  </ul>
+
+  <%= simple_format @proposal.content %>
+
+  <hr />
+
+  <div class="media">
+    <div class="media-left">
+      <%= avatar_tag @proposal.user %>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= @proposal.user.nickname %></h4>
+    </div>
+  </div>
 </div>
 
-<%= avatar_tag @proposal.user %>
-<%= @proposal.user.nickname %>
-
+<h1><%= t 'comments.title' %></h1>
+<%= render 'comments/new' %>
 <div id="comments">
-  <%= render 'comments/new' %>
   <%= render partial: 'comments/comment', collection: @proposal.comments %>
 </div>

@@ -1,4 +1,4 @@
 <% if @comment.valid? %>
-$('#new_comment').after("<%= j(render(partial: 'comments/comment', locals: { comment: @comment })) %>");
+$('#comments').prepend("<%= j(render(partial: 'comments/comment', locals: { comment: @comment })) %>");
 $('#comment_content').val('');
 <% end %>

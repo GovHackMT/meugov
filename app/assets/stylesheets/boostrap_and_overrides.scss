@@ -1,2 +1,317 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* -------------------------------- 
+MeuGov
+-------------------------------- */
+
+/* -------------------------------- 
+Variaveis
+-------------------------------- */
+
+$color-1: #152e75; // BLUE
+$color-2: #e28624; // Orange
+$color-3: #ffffff; // WHITE
+$color-4: #ECF0F1; // ANTI-FLASH WHITE
+
+// fonts 
+$primary-font: 'Roboto', sans-serif;
+
+// header size
+$header-height-small: 60px;
+$header-height: 80px;
+
+$secondary-nav-height-small: 50px;
+$secondary-nav-height: 70px;
+
+
+/* -------------------------------- 
+Mixins
+-------------------------------- */
+// Align absolute
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+// border radius
+
+@mixin border-radius($radius:.25em) {
+  border-radius: $radius;
+}
+
+// antialiasing mode font rendering
+
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// clearfix
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+// color tint and shade
+
+@function shade(
+    $color,
+    $percent
+  ) {
+
+  @return mix(#000, $color, $percent);
+}
+@function tint(
+    $color,
+    $percent
+  ) {
+
+  @return mix(#fff, $color, $percent);
+}
+
+
+/* -------------------------------- 
+Breakpoints
+-------------------------------- */
+$S:     480px;   
+$M:     768px;     
+$L:     1024px;     
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+   @media only screen and (min-width: $S) { @content; } 
+  }
+  @else if $canvas == M {
+   @media only screen and (min-width: $M) { @content; } 
+  }
+  @else if $canvas == L {
+   @media only screen and (min-width: $L) { @content; } 
+  }
+}
+
+// super light grid system
+
+@mixin column($percentage, $float-direction:left) {
+  width: 100% * $percentage;
+  float: $float-direction;
+}
+
+body {
+	font-family: $primary-font;
+}
+
+// Navigation
+.cd-auto-hide-header {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: $header-height-small;
+	background-color: $color-1;
+	@include clearfix;
+	/* Force Hardware Acceleration */
+	transform: translateZ(0);
+	will-change: transform;
+	transition: transform .5s;
+
+	&.is-hidden {
+		transform: translateY(-100%);
+	}
+
+	@include MQ(L) {
+		height: $header-height;
+	}
+}
+
+.cd-auto-hide-header .logo, 
+.cd-auto-hide-header .nav-trigger {
+	position: absolute;
+	@include center(y);
+}
+
+.cd-auto-hide-header .logo {
+	left: 5%;
+
+	a, img {
+		display: block;
+	}
+}
+
+.cd-auto-hide-header .nav-trigger {
+	/* vertically align its content */
+	display: table;
+	height: 100%;
+	padding: 0 1em;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: $color-3;
+	font-weight: bold;
+	right: 0;
+	border-left: 1px solid shade($color-2, 5%);
+
+	span {
+		/* vertically align inside parent element */
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	em, em::after, em::before {
+		/* this is the menu icon */
+		display: block;
+		position: relative;
+		height: 2px;
+		width: 22px;
+		background-color: $color-1;
+		backface-visibility: hidden;
+	}
+
+	em {
+		/* this is the menu central line */
+		margin: 6px auto 14px;
+		transition: background-color .2s;
+	}
+
+	em::before, em::after {
+		position: absolute;
+		content: '';
+		left: 0;
+		transition: transform .2s;
+	}
+
+	em::before {
+		/* this is the menu icon top line */
+		transform: translateY(-6px);
+	}
+
+	em::after {
+		/* this is the menu icon bottom line */
+		transform: translateY(6px);
+	}
+
+	@include MQ(L) {
+		display: none;
+	}
+}
+
+.cd-auto-hide-header.nav-open .nav-trigger {
+	em {
+		/* transform menu icon into a 'X' icon */
+		background-color: rgba($color-3, 0);
+	}
+
+	em::before {
+		/* rotate top line */
+		transform: rotate(-45deg);
+	}
+
+	em::after {
+		/* rotate bottom line */
+		transform: rotate(45deg);
+	}
+}
+
+.cd-primary-nav {
+	display: inline-block;
+	float: right;
+	height: 100%;
+	padding-right: 5%;
+
+	> ul {
+		position: absolute;
+		z-index: 2;
+		top: $header-height-small;
+		left: 0;
+		width: 100%;
+		background-color: $color-1;
+		display: none;
+		box-shadow: 0 14px 20px rgba(#000, .2);
+
+		a {
+			/* target primary-nav links */
+			display: block;
+			height: 50px;
+			line-height: 50px;
+			padding-left: 5%;
+			color: $color-3;
+			font-size: 1.8rem;
+			border-top: 1px solid shade($color-3, 5%);
+
+			&:hover, &.active {
+				color: $color-2;
+			}
+		}
+	}
+
+	@include MQ(L) {
+		/* vertically align its content */
+		display: table;
+
+		> ul {
+			/* vertically align inside parent element */
+			display: table-cell;
+			vertical-align: middle;
+			/* reset mobile style */
+			position: relative;
+			width: auto;
+			top: 0;
+			padding: 0;
+			@include clearfix;
+			background-color: transparent;
+			box-shadow: none;
+
+			li {
+				display: inline-block;
+				float: left;
+				margin-right: 1.5em;
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+
+			a {
+				/* reset mobile style */
+				height: auto;
+				line-height: normal;
+				padding: 0;
+				border: none;
+			}
+		}
+	}
+}
+
+.nav-open .cd-primary-nav ul, 
+.cd-primary-nav ul:target {
+	/* 
+		show primary nav - mobile only 
+		:target is used to show navigation on no-js devices
+	*/
+	display: block;
+
+	@include MQ(L) {
+		display: table-cell;
+	}
+}

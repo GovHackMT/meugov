@@ -5,5 +5,9 @@ class Comment < ActiveRecord::Base
 
   # Scopes
   default_scope { order('comments.created_at DESC') }
-  scope :created_by, -> (user) { where(user_id: user.id) }
+
+  # Valitions
+  validates :commentable_type, presence: true
+  validates :commentable_id, presence: true
+  validates :content, presence: true
 end
