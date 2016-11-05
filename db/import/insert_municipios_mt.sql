@@ -7,7 +7,7 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5100250,'Alta Floresta',49164,690143,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5100300,'Alto Araguaia',15644,1.16346e+006,13,now(),now());
+ values (5100300,'Alto Araguaia',15644,1163457,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5100359,'Alto Boa Vista',5247,57908,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -43,9 +43,9 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5102603,'Campinapolis',14305,125784,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5102637,'Campo Novo do Parecis',27577,1.1461e+006,13,now(),now());
+ values (5102637,'Campo Novo do Parecis',27577,1146103,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5102678,'Campo Verde',31589,1.09504e+006,13,now(),now());
+ values (5102678,'Campo Verde',31589,1095038,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5102686,'Campos de Julio',5154,395401,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -71,11 +71,11 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5103353,'Confresa',25124,264786,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5103361,'Conquista D'Oeste',3385,44195,13,now(),now());
+ values (5103361,'Conquista D\Oeste',3385,44195,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5103379,'Cotriguacu',14983,161684,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5103403,'Cuiaba',551098,1.10516e+007,13,now(),now());
+ values (5103403,'Cuiaba',551098,11051628,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5103437,'Curvelandia',4866,43147,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -87,13 +87,13 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5103700,'Feliz Natal',10933,200116,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5103809,'Figueiropolis D'Oeste',3796,51363,13,now(),now());
+ values (5103809,'Figueiropolis D\Oeste',3796,51363,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5103858,'Gaucha do Norte',6293,100126,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5103908,'General Carneiro',5027,97903,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5103957,'Gloria D'Oeste',3135,40615,13,now(),now());
+ values (5103957,'Gloria D\Oeste',3135,40615,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5104104,'Guaranta do Norte',32216,319307,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -123,9 +123,9 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5105200,'Juscimeira',11430,135628,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5105234,'Lambari D'Oeste',5431,124207,13,now(),now());
+ values (5105234,'Lambari D\Oeste',5431,124207,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5105259,'Lucas do Rio Verde',45556,1.65189e+006,13,now(),now());
+ values (5105259,'Lucas do Rio Verde',45556,1651886,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5105309,'Luciara',2224,21560,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -133,7 +133,7 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5105606,'Matupa',14174,283746,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5105622,'Mirassol d'Oeste',25299,395174,13,now(),now());
+ values (5105622,'Mirassol D\Oeste',25299,395174,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5105903,'Nobres',15002,237730,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -157,7 +157,7 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5108956,'Nova Monte Verde',8093,155353,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5106224,'Nova Mutum',31649,1.42597e+006,13,now(),now());
+ values (5106224,'Nova Mutum',31649,1425972,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5106174,'Nova Nazare',3029,31247,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -205,7 +205,7 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5107008,'Poxoreo',17599,277225,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5107040,'Primavera do Leste',52066,2.07304e+006,13,now(),now());
+ values (5107040,'Primavera do Leste',52066,2073040,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5107065,'Querencia',13033,398718,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -219,7 +219,7 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5107578,'Rondolandia',3604,79076,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5107602,'Rondonopolis',195476,5.09494e+006,13,now(),now());
+ values (5107602,'Rondonopolis',195476,5094937,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5107701,'Rosario Oeste',17679,224125,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -251,17 +251,17 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5107404,'Sao Pedro da Cipa',4158,28868,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5107875,'Sapezal',18094,1.21503e+006,13,now(),now());
+ values (5107875,'Sapezal',18094,1215026,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5107883,'Serra Nova Dourada',1365,19155,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5107909,'Sinop',113099,2.0114e+006,13,now(),now());
+ values (5107909,'Sinop',113099,2011403,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5107925,'Sorriso',66521,2.06714e+006,13,now(),now());
+ values (5107925,'Sorriso',66521,2067137,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5107941,'Tabapora',9932,173312,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5107958,'Tangara da Serra',83431,1.30464e+006,13,now(),now());
+ values (5107958,'Tangara da Serra',83431,1304639,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5108006,'Tapurah',10392,286033,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
@@ -275,7 +275,7 @@ insert into cities (id, name, population, pib, state_id, created_at, updated_at)
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5108352,'Vale de Sao Domingos',3052,38129,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
- values (5108402,'Varzea Grande',252596,3.44945e+006,13,now(),now());
+ values (5108402,'Varzea Grande',252596,3449445,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
  values (5108501,'Vera',10235,183345,13,now(),now());
 insert into cities (id, name, population, pib, state_id, created_at, updated_at)
