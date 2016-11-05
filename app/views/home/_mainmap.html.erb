@@ -6,6 +6,27 @@
 
 							var map = null;
 
+							var dataLocations = [
+								{
+									"lat": '-15.6025961',
+									"lng": '-56.0975243',
+									"title": 'Escola Estadual Teste 1',
+									"city": 'Cuiabá',
+									"area": 'Educação',
+									"imageUrl": 'http://placehold.it/350x150',
+									"icon": 'icon_blue.png',
+								},
+								{
+									"lat": '-15.6025980',
+									"lng": '-56.0975260',
+									"title": 'Escola Estadual Teste 2',
+									"city": 'Cuiabá',
+									"area": 'Educação',
+									"imageUrl": 'http://placehold.it/350x150',
+									"icon": 'icon_red.png',
+								}
+							]
+
 							function initMap() {
 
 								var center = {lat:-15.6025961, lng:-56.0975243};
@@ -16,34 +37,56 @@
 							    zoom: 12
 							  });					 
 
-								
-								var latLng90 = {lat:-15.6025961, lng:-56.0975243};
-								
-								
-								var contString90 = '<div id="content">'+
-						      '<h3><strong>Escola Estadual teste1</strong></h3>'+
-						      '<p>Cidade: teste</p>'+
-						    	'<p>Área de Atuação: Educação</p>'+
-						    	'<div><img src="http://placehold.it/350x150" alt="" /></div>'+
-						    	'<hr>'+
-						    	'<div><a href="#" class="btn btn-primary">Mais Detalhes</a></div>'+
-						      '</div>';
-								var infowindow90 = new google.maps.InfoWindow({
-									content: contString90								});
 
-								var icon90 = '/assets/icon_blue.png';
+								//Create and open InfoWindow.
+								var infoWindow = new google.maps.InfoWindow();
 
-							  var marker90 = new google.maps.Marker({
-							    map: map,
-							    icon: icon90,
-							    position: latLng90,
-							    title: 'Escola Estadual teste1'
-							  });
+								for (var i = 0; i < dataLocations.length; i++) {
+								    var data = markers[i];
+								    var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+								    var marker = new google.maps.Marker({
+								        position: myLatlng,
+								        map: map,
+								        title: data.title
+								    });
 
-							  marker90.addListener('click', function() {
-    							infowindow90.open(map, marker90);
-    							map.panTo(latLng90);
-  							});
+								    //Attach click event to the marker.
+								    (function (marker, data) {
+								        google.maps.event.addListener(marker, "click", function (e) {
+								            //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+								            infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.description + "</div>");
+								            infoWindow.open(map, marker);
+								        });
+								    })(marker, data);
+								}
+								
+								// var latLng90 = {lat:-15.6025961, lng:-56.0975243};
+								
+								
+								// var contString90 = '<div id="content">'+
+						  //     '<h3><strong>Escola Estadual teste1</strong></h3>'+
+						  //     '<p>Cidade: teste</p>'+
+						  //   	'<p>Área de Atuação: Educação</p>'+
+						  //   	'<div><img src="http://placehold.it/350x150" alt="" /></div>'+
+						  //   	'<hr>'+
+						  //   	'<div><a href="#" class="btn btn-primary">Mais Detalhes</a></div>'+
+						  //     '</div>';
+								// var infowindow90 = new google.maps.InfoWindow({
+								// 	content: contString90								});
+
+								// var icon90 = '/assets/icon_blue.png';
+
+							 //  var marker90 = new google.maps.Marker({
+							 //    map: map,
+							 //    icon: icon90,
+							 //    position: latLng90,
+							 //    title: 'Escola Estadual teste1'
+							 //  });
+
+							 //  marker90.addListener('click', function() {
+    				// 			infowindow90.open(map, marker90);
+    				// 			map.panTo(latLng90);
+  						// 	});
 							}
 
 							google.maps.event.addDomListener(window, "load", initMap);							
