@@ -10,7 +10,7 @@ Variaveis
 -------------------------------- */
 
 $color-1: #152e75; // BLUE
-$color-2: #e28624; // Orange
+$color-2: #e28624; // ORANGE
 $color-3: #ffffff; // WHITE
 $color-4: #ECF0F1; // ANTI-FLASH WHITE
 
@@ -132,7 +132,6 @@ body {
 	height: $header-height-small;
 	background-color: $color-1;
 	@include clearfix;
-	/* Force Hardware Acceleration */
 	transform: translateZ(0);
 	will-change: transform;
 	transition: transform .5s;
@@ -161,35 +160,32 @@ body {
 }
 
 .cd-auto-hide-header .nav-trigger {
-	/* vertically align its content */
 	display: table;
 	height: 100%;
 	padding: 0 1em;
 	font-size: 1.2rem;
 	text-transform: uppercase;
+	text-decoration: none;
 	color: $color-3;
 	font-weight: bold;
 	right: 0;
-	border-left: 1px solid shade($color-2, 5%);
+	border-left: 1px solid shade($color-3, 5%);
 
 	span {
-		/* vertically align inside parent element */
 		display: table-cell;
 		vertical-align: middle;
 	}
 
 	em, em::after, em::before {
-		/* this is the menu icon */
 		display: block;
 		position: relative;
 		height: 2px;
 		width: 22px;
-		background-color: $color-1;
+		background-color: $color-3;
 		backface-visibility: hidden;
 	}
 
 	em {
-		/* this is the menu central line */
 		margin: 6px auto 14px;
 		transition: background-color .2s;
 	}
@@ -202,12 +198,10 @@ body {
 	}
 
 	em::before {
-		/* this is the menu icon top line */
 		transform: translateY(-6px);
 	}
 
 	em::after {
-		/* this is the menu icon bottom line */
 		transform: translateY(6px);
 	}
 
@@ -218,17 +212,14 @@ body {
 
 .cd-auto-hide-header.nav-open .nav-trigger {
 	em {
-		/* transform menu icon into a 'X' icon */
 		background-color: rgba($color-3, 0);
 	}
 
 	em::before {
-		/* rotate top line */
 		transform: rotate(-45deg);
 	}
 
 	em::after {
-		/* rotate bottom line */
 		transform: rotate(45deg);
 	}
 }
@@ -248,9 +239,10 @@ body {
 		background-color: $color-1;
 		display: none;
 		box-shadow: 0 14px 20px rgba(#000, .2);
+		list-style: none;
+		padding: 0;
 
 		a {
-			/* target primary-nav links */
 			display: block;
 			height: 50px;
 			line-height: 50px;
@@ -258,6 +250,7 @@ body {
 			color: $color-3;
 			font-size: 1.8rem;
 			border-top: 1px solid shade($color-3, 5%);
+			text-decoration: none;
 
 			&:hover, &.active {
 				color: $color-2;
@@ -266,14 +259,11 @@ body {
 	}
 
 	@include MQ(L) {
-		/* vertically align its content */
 		display: table;
 
 		> ul {
-			/* vertically align inside parent element */
 			display: table-cell;
 			vertical-align: middle;
-			/* reset mobile style */
 			position: relative;
 			width: auto;
 			top: 0;
@@ -293,7 +283,6 @@ body {
 			}
 
 			a {
-				/* reset mobile style */
 				height: auto;
 				line-height: normal;
 				padding: 0;
