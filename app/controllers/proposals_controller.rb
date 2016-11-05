@@ -71,6 +71,8 @@ class ProposalsController < ApplicationController
     @vote.answer = params[:answer]
     @vote.save!
 
+    @proposal.update_thermometer
+
     respond_to :js
   end
 
@@ -84,7 +86,7 @@ class ProposalsController < ApplicationController
     def proposal_params
       params.require(:proposal).permit(
         :title, :content, :city_id, :street, :number, :complement,
-        :neighborhood, :cep
+        :neighborhood, :cep, :proposal_category_id
       )
     end
 end

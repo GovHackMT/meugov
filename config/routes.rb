@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :proposal_categories
   root 'home#index'
 
   devise_for :users, path: '', path_names: {sign_in: "acessar", sign_up: "registro", sign_out: "sair"}

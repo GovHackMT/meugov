@@ -1,0 +1,1 @@
+json.partial! "proposal_categories/proposal_category", proposal_category: @proposal_category

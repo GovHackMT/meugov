@@ -1,0 +1,1 @@
+json.array! @proposal_categories, partial: 'proposal_categories/proposal_category', as: :proposal_category
