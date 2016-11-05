@@ -41,6 +41,8 @@ pt-BR:
       new: "Enviar proposta"
     form:
       address: "Endereço"
+    new:
+      title: "Nova proposta"
 
   comments:
     title: "Comentários"
