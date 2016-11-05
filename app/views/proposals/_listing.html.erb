@@ -1,10 +1,13 @@
 <% if @proposals.size > 0 %>
   <% @proposals.each do |proposal| %>
+
+
   <div class="media">
     <div class="media-left">
-      <%= avatar_tag proposal.user %>
+      <%= proposal.city.inspect %>
     </div>
     <div class="media-body">
+      <%= avatar_tag proposal.user %>
       <h4 class="media-heading"><%= link_to proposal.title, proposal %></h4>
       <ul class="list-inline">
         <li><%= fa_icon 'calendar', text: l(proposal.created_at) %></li>
