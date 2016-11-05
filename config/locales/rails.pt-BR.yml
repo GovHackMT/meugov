@@ -266,6 +266,10 @@ pt-BR:
         cep: "CEP"
         q: "Busca"
 
+      property:
+        property_category_id: "Categoria"
+        city_id: "Cidade"
+
   mail_form:
     models:
       form_contact: "Contato"

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Property Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_categories.each do |property_category| %>
+      <tr>
+        <td><%= property_category.name %></td>
+        <td><%= link_to 'Show', property_category %></td>
+        <td><%= link_to 'Edit', edit_property_category_path(property_category) %></td>
+        <td><%= link_to 'Destroy', property_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property category', new_property_category_path %>
