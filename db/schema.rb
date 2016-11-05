@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105140917) do
+ActiveRecord::Schema.define(version: 20161105163155) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "state_id",   limit: 4
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(version: 20161105140917) do
 
   add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "proposal_votes", force: :cascade do |t|
+    t.integer  "proposal_id", limit: 4
+    t.integer  "user_id",     limit: 4
+    t.integer  "answer",      limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "proposal_votes", ["proposal_id"], name: "index_proposal_votes_on_proposal_id", using: :btree
+  add_index "proposal_votes", ["user_id"], name: "index_proposal_votes_on_user_id", using: :btree
 
   create_table "proposals", force: :cascade do |t|
     t.string   "title",        limit: 255
