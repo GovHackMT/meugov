@@ -1,6 +1,6 @@
 class ProposalsController < ApplicationController
-  before_action :set_proposal, only: [:show, :edit, :update, :destroy, :vote]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_proposal, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /proposals
   # GET /proposals.json
