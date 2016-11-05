@@ -1,31 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Proposals</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @proposals.each do |proposal| %>
-      <tr>
-        <td><%= proposal.title %></td>
-        <td><%= proposal.content %></td>
-        <td><%= proposal.user.nickname %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Proposal', new_proposal_path %>
+<%= link_to t('proposals.index.new'), new_proposal_path, class: 'btn btn-primary' %>
 
 <h1><%= t '.title' %></h1>
 <% if @proposals.size > 0 %>
@@ -35,7 +8,8 @@
     <%= avatar_tag proposal.user %>
   </div>
   <div class="media-body">
-    <h4 class="media-heading"><%= proposal.title %></h4>
+    <h4 class="media-heading"><%= link_to proposal.title, proposal %></h4>
+    <%= fa_icon 'calendar', text: l(proposal.created_at) %>
     <%= simple_format proposal.content %>
   </div>
 </div>

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -48,4 +48,7 @@ end
 gem 'devise'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
