@@ -41,3 +41,11 @@ pt-BR:
       new: "Enviar proposta"
     form:
       address: "Endereço"
+
+  comments:
+    title: "Comentários"
+    new:
+      add: "Adicionar"
+    count:
+      one: "Um comentário"
+      other: "%{count} comentários"
