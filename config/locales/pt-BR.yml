@@ -38,5 +38,6 @@ pt-BR:
   proposals:
     index:
       title: "Propostas"
+      new: "Enviar proposta"
     form:
       address: "Endereço"
