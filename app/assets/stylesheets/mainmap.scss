@@ -1,25 +1,24 @@
-.mainmap-container {
-	.mainmap-header {
+.top-proposals {
+	.top-proposals-header {
 		padding-top: 20px;
 		margin-bottom: 20px;
 		h3 {
 			font-family: $primary-font;
 		}
 	}
-	.mainmap-box {
-		float: left;
-		margin-right: 20px;
-		width: calc(100% - 340px);
-	}
-	.mainmap-list-top {
-		float: left;
-		width: 300px;
-		margin-right: 20px;
+	.top-proposals-item {
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		border-bottom: solid 1px #cecece;
+		.top-proposals-image {
+			margin-bottom: 5px;
+		}
+		.top-proposals-info {
+			.top-proposals-title {}
+			.top-proposals-meta {}
+		}
 	}
 }
-
-
-
 
 #mainmap {
 	height: 550px;
