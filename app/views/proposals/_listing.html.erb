@@ -30,6 +30,7 @@
       }
 
       google.maps.event.addDomListener(window, "load", initMap);
+      google.maps.event.addDomListener(window, "turbolinks:load", initMap);
 
     });
     -->
@@ -59,7 +60,7 @@
                 <div class="proposta-avatar"><%= avatar_tag proposal.user %></div>
                 <div class="proposta-writer">
                   <div class="proposta-writer-name"><%= fa_icon 'map', text: proposal.city.name_with_state %></div>
-                  <span class="proposta-date"><%= fa_icon 'calendar', text: l(proposal.created_at) %></span> 
+                  <span class="proposta-date"><%= fa_icon 'calendar', text: l(proposal.created_at) %></span>
                   <div class="proposta-writer-designation">por: <%= proposal.user.name %></div>
                 </div>
               </div>
@@ -81,7 +82,7 @@
         </div>
       </div>
 
-    </div> 
+    </div>
   </div>
 
   <% end %>
