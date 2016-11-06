@@ -14,12 +14,26 @@ module ProposalsHelper
   end
 
   def thermometer_progress(total)
+    total ||= 0
     if total > 66.66
       css_class = 'progress-bar-success'
     elsif total > 33.33 and total < 66.66
       css_class = 'progress-bar-warning'
     else
       css_class = 'progress-bar-danger'
+    end
+
+    css_class
+  end
+
+  def proposal_class(total)
+    total ||= 0
+    if total > 66.66
+      css_class = 'proposta-success'
+    elsif total > 33.33 and total < 66.66
+      css_class = 'proposta-warning'
+    else
+      css_class = 'proposta-danger'
     end
 
     css_class
