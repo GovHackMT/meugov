@@ -21,18 +21,18 @@ h1, h2, h3 {
 }
 .btn-facebook {
     background: #3b5998;
-    color: $color-3;
+    color: $color-3 !important;
     &:hover, &:focus {
-        background: #2f4779;
-        color: $color-3;
+        background: #2f4779 !important;
+        color: $color-3 !important;
     }
 }
 .btn-github {
     background: #333333;
-    color: $color-3;
+    color: $color-3 !important;
     &:hover, &:focus {
-        background: #0c0c0c;
-        color: $color-3;
+        background: #0c0c0c !important;
+        color: $color-3 !important;
     }
 }
 .btn-envie-caso {
@@ -492,5 +492,12 @@ footer {
         margin: 15px 0 0 0;
         border-top: solid 1px $color-2;
         color: rgba($color-3, 0.3);
+    }
+}
+
+nav.cd-primary-nav .login-social {
+    padding: 5px;
+    a {
+        display: block;
     }
 }

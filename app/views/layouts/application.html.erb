@@ -52,7 +52,11 @@
 					<ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
 	          <li><%= link_to t('.sign_in'), new_user_session_path %></li>
 	          <li><%= link_to t('.sign_up'), new_user_registration_path %></li>
+	          <li role="separator" class="divider"></li>
+	          <li class="login-social"><%= link_to fa_icon('facebook-official', text: t("devise.shared.links.new_session_link", provider: 'Facebook')), omniauth_authorize_path(resource_name, 'facebook'), class: 'btn btn-facebook active' %></li>
+	          <li class="login-social"><%= link_to fa_icon('github', text: t("devise.shared.links.new_session_link", provider: 'Github')), omniauth_authorize_path(resource_name, 'github'), class: 'btn btn-github active' %></li>
 					</ul>
+					
 				</div>
 				<% end %>
 			</nav>
