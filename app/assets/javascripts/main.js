@@ -1,7 +1,7 @@
-jQuery(document).ready(function($){
+var ready_main = function() {
 	var mainHeader = $('.cd-auto-hide-header'),
 		headerHeight = mainHeader.height();
-	
+
 	// variables
 	var scrolling = false,
 		previousTop = 0,
@@ -40,6 +40,7 @@ jQuery(document).ready(function($){
 	   	previousTop = currentTop;
 		scrolling = false;
 	}
+}
 
-	
-});
+jQuery(document).ready(ready_main);
+jQuery(document).on('turbolinks:load', ready_main);
