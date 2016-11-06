@@ -9,7 +9,7 @@
     <%= f.input :email, required: true %>
     <%= f.input :password, required: true %>
     <%= f.input :password_confirmation, required: true %>
-    <%= f.input :city_id, collection: City.order(:name), label_method: :name_with_state %>
+    <%= f.input :city_id, collection: City.joins(:state).includes(:state).order(:name), label_method: :name_with_state %>
 
     <%= f.button :submit, t(".submit"), class: "btn btn-primary" %>
   <% end %>

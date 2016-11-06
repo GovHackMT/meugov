@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   resources :proposal_categories
   root 'home#index'
 
-  devise_for :users, path: '', path_names: {sign_in: "acessar", sign_up: "registro", sign_out: "sair"}
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+
   resources :comments
   resources :proposals do
     post :vote, on: :member

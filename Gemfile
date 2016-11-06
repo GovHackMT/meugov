@@ -56,3 +56,9 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+# Social Login
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-github'
+gem 'omniauth-twitter'
+
