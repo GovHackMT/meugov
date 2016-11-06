@@ -20,6 +20,24 @@ h1, h2, h3 {
     margin: 0 0 20px 0;
 }
 
+.btn-facebook {
+    background: #3b5998;
+    color: $color-3;
+    &:hover, &:focus {
+        background: #2f4779;
+        color: $color-3;
+    }
+}
+
+.btn-github {
+    background: #333333;
+    color: $color-3;
+    &:hover, &:focus {
+        background: #0c0c0c;
+        color: $color-3;
+    }
+}
+
 // Navigation
 .cd-auto-hide-header {
 	position: fixed;
