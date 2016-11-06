@@ -1,4 +1,7 @@
 <% if @proposals.size > 0 %>
+
+<div class="propostas-list">
+
   <% @proposals.each do |proposal| %>
 
   <script>
@@ -11,17 +14,17 @@
 
         var center = {lat:<%= proposal.city.latitude %>, lng:<%= proposal.city.longitude %>};
 
+        map<%= proposal.id %> = new google.maps.Map(document.getElementById('map<%= proposal.id %>'), {
+          center: center,
+          scrollwheel: false,
+          zoom: 12
+        });
+
         var myLatlng = new google.maps.LatLng(<%= proposal.city.latitude %>, <%= proposal.city.latitude %>);
         var marker = new google.maps.Marker({
             position: myLatlng,
             map: map<%= proposal.id %>,
             title: '<%= proposal.title %>'
-        });
-
-        map<%= proposal.id %> = new google.maps.Map(document.getElementById('map<%= proposal.id %>'), {
-          center: center,
-          scrollwheel: false,
-          zoom: 12
         });
 
       }
@@ -32,36 +35,59 @@
     -->
   </script>
 
-  <div class="media">
-    <div class="media-left">
-      <div id="map<%= proposal.id %>" class="maplist"></div> 
-    </div>
-    <div class="media-body">
-      <div class="row">
-        <div class="col-md-1"><%= avatar_tag proposal.user %></div>
-        <div class="col-md-11">
-          <h4 class="media-heading"><%= link_to proposal.title, proposal %></h4>
-          <ul class="list-inline">
-            <li><%= fa_icon 'calendar', text: l(proposal.created_at) %></li>
-            <li><span class="label label-default"><%= fa_icon 'map', text: proposal.city.name_with_state %></span></li>
-            <li><span class="label label-default"><%= fa_icon 'bookmark', text: proposal.proposal_category.name %></span></li>
-			<li><%= fa_icon 'comments-o', text: proposal.comments.count %></li>
-          </ul>
-        </div>
-      </div>
-    
-      <p><%= simple_format proposal.content %></p>
+  <div class="well">
+    <div class="proposta proposta-success">
 
       <div class="row">
-        <div class="col-md-2" id="votes"><%= render 'votes', proposal: proposal %></div>
-        <div class="col-md-6">
-          <strong>Aprovação</strong>
-          <div id="thermometer"><%= render 'thermometer', total: proposal.thermometer %></div>
+        <div class="col-md-3">
+          <div id="map<%= proposal.id %>" class="maplist"></div>
+        </div>
+        <div class="col-md-9">
+          <div class="proposta-desc">
+            <div class="proposta-section">
+              <h3><%= link_to proposal.title, proposal %></h3>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <p><%= simple_format proposal.content %></p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-6">
+
+                <div class="proposta-avatar"><%= avatar_tag proposal.user %></div>
+                <div class="proposta-writer">
+                  <div class="proposta-writer-name"><%= fa_icon 'map', text: proposal.city.name_with_state %></div>
+                  <span class="proposta-date"><%= fa_icon 'calendar', text: l(proposal.created_at) %></span> 
+                  <div class="proposta-writer-designation">por: <%= proposal.user.name %></div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-md-12"><%= fa_icon 'comments-o', text: proposal.comments.count %> Comentários - 123 Visualizações</div>
+                </div>
+                <hr class="mini">
+                <div class="row">
+                  <div class="col-md-4" id="votes"><%= render 'votes', proposal: proposal %></div>
+                  <div class="col-md-8" id="thermometer">
+                    <%= render 'thermometer', total: proposal.thermometer %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+    </div> 
   </div>
+
   <% end %>
+
+</div>
+
 <% else %>
   <p>Nenhuma proposta encontrada</p>
 <% end %>

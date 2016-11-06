@@ -1,24 +1,19 @@
 <% if user_signed_in? %>
   <% if proposal.voted?(current_user) %>
-  <div class="row">
-    <div class="col-md-3"><%= fa_icon('thumbs-o-up') %></div>
-    <div class="col-md-3" id="yes"><%= proposal.total_yes %></div>
-    <div class="col-md-3"><%= fa_icon('thumbs-o-down') %></div>
-    <div class="col-md-3" id="no"><%= proposal.total_no %></div>
-  </div>
+
+    <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-up" title="Você só pode votar apenas uma vez"></span> <span id="yes"><%= proposal.total_yes %></span></a>
+
+    <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-down" title="Você só pode votar apenas uma vez"></span> <span id="no"><%= proposal.total_no %></span></a>
+
   <% else %>
-  <div class="row">
-    <div class="col-md-3"><%= link_to fa_icon('thumbs-o-up'), vote_proposal_path(proposal, answer: 'yes'), remote: true, method: :post %></div>
-    <div class="col-md-3" id="yes"><%= proposal.total_yes %></div>
-    <div class="col-md-3"><%= link_to fa_icon('thumbs-o-down'), vote_proposal_path(proposal, answer: 'no'), remote: true, method: :post %></div>
-    <div class="col-md-3" id="no"><%= proposal.total_no %></div>
-  </div>
+
+    <%= link_to fa_icon('thumbs-o-up', text: "<span id=\"yes\">#{proposal.total_yes}</span>".html_safe), vote_proposal_path(proposal, answer: 'yes'), class: 'btn btn-default', remote: true, method: :post %>
+
+    <%= link_to fa_icon('thumbs-o-down', text: "<span id=\"no\">#{proposal.total_no}</span>".html_safe), vote_proposal_path(proposal, answer: 'no'), class: 'btn btn-default', remote: true, method: :post %>
+
   <% end %>
 <% else %>
-  <div class="row">
-    <div class="col-md-3"><%= fa_icon('thumbs-o-up') %></div>
-    <div class="col-md-3" id="yes"><%= proposal.total_yes %></div>
-    <div class="col-md-3"><%= fa_icon('thumbs-o-down') %></div>
-    <div class="col-md-3" id="no"><%= proposal.total_no %></div>
-  </div>
+  <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-up" title="Você precisa logar para votar"></span> <span id="yes"><%= proposal.total_yes %></span></a>
+
+  <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-down" title="Você precisa logar para votar"></span> <span id="no"><%= proposal.total_no %></span></a>
 <% end %>
