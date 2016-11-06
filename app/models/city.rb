@@ -13,6 +13,10 @@ class City < ActiveRecord::Base
     joins(:state).includes(:state).order(:name)
   end
 
+  def self.with_proposals
+    avaliable.joins(:proposals).group(:id).order(:name)
+  end
+
   def self.report_properties(property_category_id)
     filters = select("cities.id, cities.name, cities.population, cities.pib, count(properties.id) as total_properties, (count(properties.id)/cities.population) as properties_population")
     filters = filters.joins(:state).includes(:state)

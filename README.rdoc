@@ -16,5 +16,6 @@ Tecnologias
 * HTML, CSS (Sass) e Javascript (jQuery)
 * OS Like-Unix
 * Responsivo
+* Turbolinks
 * Capistrano - Ferramenta para deploy
 * Login social (Facebook e GitHub)

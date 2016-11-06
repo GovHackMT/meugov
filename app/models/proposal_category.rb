@@ -4,4 +4,8 @@ class ProposalCategory < ActiveRecord::Base
 
   # Validations
   validates :name, presence: true
+
+  def self.with_proposals
+    self.joins(:proposals).group(:id)
+  end
 end

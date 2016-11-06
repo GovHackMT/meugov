@@ -67,7 +67,7 @@
 		<%= render "layouts/messages" %>
 		<%= yield %>
 	</div>
-	
+
 	<footer>
 		<div class="container">
 			<div class="row">
@@ -176,6 +176,10 @@
 			</div>
 		</div>
 	</footer>
+
+	<a href="<%= new_proposal_path %>" class="btn btn-envie-caso" alt="Criar proposta" title="Criar proposta">
+        <span class="fa fa-pencil-square"></span><br><span class="hidden-xs">Criar<br>proposta</span>
+    </a>
 
 </body>
 </html>
