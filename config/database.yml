@@ -51,5 +51,5 @@ production:
   <<: *default
   database: meugov_production
   username: meugov
-  password: "p@$$w0rd16"
-  #password: <%= ENV['MEUGOV_DATABASE_PASSWORD'] %>
+  password: <%= ENV['MEUGOV_DATABASE_PASSWORD'] %>
+  socket: /var/run/mysqld/mysqld.sock
