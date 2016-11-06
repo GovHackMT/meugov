@@ -24,7 +24,8 @@
         var marker = new google.maps.Marker({
             position: myLatlng,
             map: map<%= proposal.id %>,
-            title: '<%= proposal.title %>'
+            title: '<%= proposal.title %>',
+            icon: '/images/icon_blue.png',
         });
 
       }
@@ -70,8 +71,8 @@
                 </div>
                 <hr class="mini">
                 <div class="row">
-                  <div class="col-md-4" id="votes"><%= render 'votes', proposal: proposal %></div>
-                  <div class="col-md-8" id="thermometer">
+                  <!-- <div class="col-md-4" id="votes"><%= render 'votes', proposal: proposal %></div> -->
+                  <div class="col-md-12" id="thermometer">
                     <%= render 'thermometer', total: proposal.thermometer %>
                   </div>
                 </div>

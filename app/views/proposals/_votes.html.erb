@@ -1,9 +1,17 @@
 <% if user_signed_in? %>
   <% if proposal.voted?(current_user) %>
 
-    <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-up" title="Você só pode votar apenas uma vez"></span> <span id="yes"><%= proposal.total_yes %></span></a>
+  	<script>
+  		$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
+  	</script>
 
-    <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-down" title="Você só pode votar apenas uma vez"></span> <span id="no"><%= proposal.total_no %></span></a>
+    <a class="btn btn-default btn-disabled" data-toggle="tooltip" data-placement="top" title="Você só pode votar apenas uma vez" disabled><span class="fa fa-thumbs-o-up"></span> <span id="yes"><%= proposal.total_yes %></span></a>
+
+    <a class="btn btn-default btn-disabled" data-toggle="tooltip" data-placement="top" title="Você só pode votar apenas uma vez" disabled><span class="fa fa-thumbs-o-down"></span> <span id="no"><%= proposal.total_no %></span></a>
+
+		<!-- <p><span class="text-info">Você só pode votar apenas uma vez</span></p> -->
 
   <% else %>
 
@@ -13,7 +21,16 @@
 
   <% end %>
 <% else %>
-  <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-up" title="Você precisa logar para votar"></span> <span id="yes"><%= proposal.total_yes %></span></a>
 
-  <a class="btn btn-default btn-disabled" disabled><span class="fa fa-thumbs-o-down" title="Você precisa logar para votar"></span> <span id="no"><%= proposal.total_no %></span></a>
+  	<script>
+  		$(function () {
+			  $('[data-toggle="tooltip"]').tooltip()
+			})
+  	</script>
+
+  <a class="btn btn-default btn-disabled" data-toggle="tooltip" data-placement="top" title="Você precisa logar para votar" disabled><span class="fa fa-thumbs-o-up"></span> <span id="yes"><%= proposal.total_yes %></span></a>
+
+  <a class="btn btn-default btn-disabled" data-toggle="tooltip" data-placement="top" title="Você precisa logar para votar" disabled><span class="fa fa-thumbs-o-down"></span> <span id="no"><%= proposal.total_no %></span></a>
+
+  <!-- <p><span class="text-info">Você só pode votar apenas uma vez</span></p> -->
 <% end %>

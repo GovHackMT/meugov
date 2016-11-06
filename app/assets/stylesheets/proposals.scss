@@ -39,6 +39,7 @@
                 margin: 0;
                 font-size: 2rem;
                 margin-top: 15px;
+                text-transform: uppercase;
             }
             @include MQ(M) {
                 h3 {
