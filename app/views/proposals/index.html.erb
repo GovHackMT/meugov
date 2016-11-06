@@ -1,20 +1,32 @@
-<h1 class="page-header"><%= t '.title' %></h1>
 <div class="row">
-  <div class="col-md-9" id="listing"><%= render "listing" %></div>
-  <div class="col-md-3">
-    <%= form_tag proposals_path, method: :get, remote: true  do |f| %>
-      <%= hidden_field_tag :role, params[:role] %>
-      <div class="form-group">
-        <%= text_field_tag :q, params[:q], class: "form-control", placeholder: Proposal.human_attribute_name(:q) %>
-      </div>
-      <div class="form-group">
-        <%= select_tag :city_id, options_from_collection_for_select(City.avaliable, 'id', 'name_with_state', params[:city_id]), prompt: Proposal.human_attribute_name(:city_id), class: "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= select_tag :proposal_category_id, options_from_collection_for_select(ProposalCategory.order(:name), 'id', 'name', params[:proposal_category_id]), prompt: Proposal.human_attribute_name(:proposal_category_id), class: "form-control" %>
-      </div>
-
-      <%= button_tag fa_icon('filter', text: t('filters_submit')), class: 'btn btn-primary' %>
-    <% end %>
+  <div class="col-md-12">
+    <h1 class="page-header"><%= t '.title' %></h1>
   </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="form-inline">
+      <%= form_tag proposals_path, method: :get, remote: true  do |f| %>
+        <%= hidden_field_tag :role, params[:role] %>
+        <div class="form-group col-md-6 search-input-box">
+          <%= text_field_tag :q, params[:q], class: "form-control search-input", placeholder: Proposal.human_attribute_name(:q) %>
+        </div>
+        <div class="form-group">
+          <%= select_tag :city_id, options_from_collection_for_select(City.avaliable, 'id', 'name_with_state', params[:city_id]), prompt: Proposal.human_attribute_name(:city_id), class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= select_tag :proposal_category_id, options_from_collection_for_select(ProposalCategory.order(:name), 'id', 'name', params[:proposal_category_id]), prompt: Proposal.human_attribute_name(:proposal_category_id), class: "form-control" %>
+        </div>
+
+        <%= button_tag fa_icon('filter', text: t('filters_submit')), class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-12" id="listing"><%= render "listing" %></div>
 </div>
