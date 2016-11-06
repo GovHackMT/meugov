@@ -10,8 +10,10 @@ class User < ActiveRecord::Base
 
   # Associations
   belongs_to :city
+  has_many :proposals
 
   # Validations
+  validates :name, presence: true
   #validates :city_id, presence: true
 
   def nickname

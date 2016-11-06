@@ -35,11 +35,13 @@ pt-BR:
     shared:
       links:
         new_session: Já tenho uma conta
-        new_session_link: Login com %{provider}
         new_registration: Registrar
         new_password: Esqueceu sua senha?
         new_confirmation: Reenviar instruções de confirmação
         new_unlock: Reenviar instruções de desbloqueio
+        new_session_link: Login com %{provider}
+      social:
+        new_session_link: Login com %{provider}
     unlocks:
       new:
         title: Reenviar instruções de desbloqueio
