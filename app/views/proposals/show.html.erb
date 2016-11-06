@@ -6,6 +6,7 @@
     <li><%= fa_icon 'calendar', text: l(@proposal.created_at) %></li>
     <li><%= fa_icon 'map', text: @proposal.city.name_with_state %></li>
     <li><%= fa_icon 'bookmark', text: @proposal.proposal_category.name %></li>
+    <li><%= fa_icon 'bar-chart', text: @proposal.count_views %></li>
   </ul>
 
   <%= simple_format @proposal.content %>

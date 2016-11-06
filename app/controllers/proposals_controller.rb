@@ -12,6 +12,8 @@ class ProposalsController < ApplicationController
   # GET /proposals/1
   # GET /proposals/1.json
   def show
+    @proposal.update_count_views
+
     @comment = @proposal.comments.new
   end
 

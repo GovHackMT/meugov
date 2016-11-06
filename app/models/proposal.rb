@@ -46,6 +46,10 @@ class Proposal < ActiveRecord::Base
     self.save
   end
 
+  def update_count_views
+    update count_views: (self.count_views + 1)
+  end
+
   def total_votes
     votes.count
   end
