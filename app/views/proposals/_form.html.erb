@@ -8,11 +8,13 @@
   <fieldset>
     <legend><%= t '.address' %></legend>
     <%= f.input :city_id, collection: City.avaliable, label_method: :name_with_state %>
+    <% if false %>
     <%= f.input :cep %>
     <%= f.input :street %>
     <%= f.input :number %>
     <%= f.input :complement %>
     <%= f.input :neighborhood %>
+    <% end %>
   </fieldset>
 
   <p><%= f.submit t('save'), class: "btn btn-primary" %></p>
