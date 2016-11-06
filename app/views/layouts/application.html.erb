@@ -27,10 +27,9 @@
 						Menu
 					</span>
 				</a>
-				</a>
 				<ul id="cd-navigation">
 					<li><%= link_to 'Propostas do governo', proposals_path(role: 'government') %></li>
-					<li><%= link_to 'Propostas da sociedade', proposals_path(role: 'society') %></li>
+					<li><%= link_to 'Sugestões do cidadão', proposals_path(role: 'society') %></li>
 				</ul>
 				<% if user_signed_in? %>
 				<div class="dropdown">

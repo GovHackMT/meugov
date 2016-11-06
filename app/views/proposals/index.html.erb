@@ -1,6 +1,14 @@
 <div class="row">
   <div class="col-md-12">
-    <h1 class="page-header"><%= t '.title' %></h1>
+    <h1 class="page-header">
+      <% if params[:role] == 'government' %>
+        Propostas do governo
+      <% elsif params[:role] == 'society' %>
+        Sugestões da cidadão
+      <% else %>
+        <%= t '.title' %>
+      <% end %>
+    </h1>
   </div>
 </div>
 
