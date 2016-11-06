@@ -1,0 +1,30 @@
+<% if @proposals.nil? %>
+  <p>Por favor informe a categoria da propriedade</p>
+<% else %>
+  <hr />
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Ranking</td>
+        <td>Cidade</td>
+        <td>N&deg; de Hab.</td>
+        <td>PIB</td>
+        <td>Categoria</td>
+        <td>Total</td>
+      </tr>
+    </thead>
+    <tbody>
+      <%
+      @proposals.each_with_index do |proposal, i| %>
+      <tr>
+        <td><%= (i+1) %></td>
+        <td><%= proposal['city'] %></td>
+        <td><%= proposal['city_population'] %></td>
+        <td><%= number_to_currency proposal['city_pib'] %></td>
+        <td><%= proposal['category'] %></td>
+        <td><%= proposal['total'] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

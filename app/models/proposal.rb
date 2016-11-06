@@ -57,4 +57,14 @@ class Proposal < ActiveRecord::Base
   def voted?(user)
     votes.exists?(user: user)
   end
+
+  def self.report(params)
+    filters = self
+    filters = filters.joins(:city, :proposal_category)
+    filters = filters.group("cities.name, proposal_categories.name")
+    filters = filters.select("cities.name city, cities.pib city_pib, cities.population city_population, proposal_categories.name AS category, count(proposals.id) as total")
+    filters = filters.where("proposals.proposal_category_id = ?", params[:proposal_category_id]) if params[:proposal_category_id].present?
+    filters = filters.where("proposals.city_id = ?", params[:city_id]) if params[:city_id].present?
+    filters
+  end
 end
