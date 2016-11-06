@@ -35,6 +35,13 @@ h1, h2, h3 {
         color: $color-3 !important;
     }
 }
+
+nav.share {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .btn-envie-caso {
     position: fixed;
     right: 15px;
@@ -72,11 +79,6 @@ h1, h2, h3 {
         }
     }
 }
-.btn-envie-caso.animated {
-  animation-duration: 2s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-} 
 
 // Navigation
 .cd-auto-hide-header {
