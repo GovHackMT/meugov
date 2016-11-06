@@ -26,7 +26,7 @@
 
 // Propostas
 .propostas-list {
-	padding: 60px 0;
+	padding: 40px 0;
     .proposta{
 
         .proposta-section {
@@ -38,20 +38,16 @@
             h3 {
                 margin: 0;
                 font-size: 2rem;
+                margin-top: 15px;
+            }
+            @include MQ(M) {
+                h3 {
+                    margin-top: 0;
+                }
             }
         }
         .proposta-desc {
             text-align:left;
-            // i {
-            //     border: 1px solid #f5f5f5;
-            //     border-radius: 50%;
-            //     height: 60px;
-            //     padding: 3px;
-            //     font-size: 42px;
-            //     text-align: center;
-            //     line-height: 1.2;
-            //     margin-left: 6px;
-            // }
             .progress {
                 margin-top: 5px;
                 margin-bottom: 0px;
@@ -77,70 +73,6 @@
         .proposta-writer-company {
             font-size: 85%;
         }
-        // Success
-        // &.proposta-success{
-        //     .proposta-section{
-        //         border-color: #5CB85C;
-        //         color: #449d44;
-        //         h3 {
-        //             a {
-        //                 color: #5cb85c;                
-        //             }
-        //         }
-        //     }
-        //     .proposta-desc{
-        //         i{
-        //             color: #5CB85C;
-        //             border-color: #5CB85C;
-        //         }
-        //     }
-        //     .proposta-writer-name{
-        //         color: #5CB85C;
-        //     }
-
-        // }
-        // // Warning
-        // &.proposta-warning{
-        //     .proposta-section{
-        //         border-color: #F0AD4E;
-        //         color: #d58512;
-        //         h3 {
-        //             a {
-        //                 color: #F0AD4E;                
-        //             }
-        //         }
-        //     }
-        //     .proposta-desc{
-        //         i{
-        //             color: #F0AD4E;
-        //             border-color: #F0AD4E;
-        //         }
-        //     }
-        //     .proposta-writer-name{
-        //         color: #F0AD4E;
-        //     }
-        // }
-        // // Danger
-        // &.proposta-danger{
-        //     .proposta-section{
-        //         border-color: #D9534F;
-        //         color: #c9302c;
-        //          h3 {
-        //             a {
-        //                 color: #D9534F;                
-        //             }
-        //         }
-        //     }
-        //     .proposta-desc{
-        //         i{
-        //             color: #D9534F;
-        //             border-color: #D9534F;
-        //         }
-        //     }
-        //     .proposta-writer-name{
-        //         color: #D9534F;
-        //     }
-        // }
     }
 }
 
