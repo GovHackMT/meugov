@@ -26,7 +26,7 @@
 			        position: myLatlng,
 			        map: map,
 			        title: data.title,
-			        icon: '/assets/' + data.icon,
+			        icon: '/images/' + data.icon,
 			    });
 
 			    // Click function at the markers
@@ -82,7 +82,7 @@
 					<div class="top-proposals-info">
 						<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal %></strong></div>
 						<div class="top-proposals-meta">
-							<small>	<%= proposal.proposal_votes_count %> Votos - 
+							<small>	<%= proposal.proposal_votes_count %> Votos -
 							<%= fa_icon 'comment-o', text: proposal.comments.count %> - </small>
 							<span class="label label-success"><%= number_to_percentage proposal.thermometer %>% Positivo</span>
 						</div>
