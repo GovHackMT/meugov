@@ -1,15 +1,23 @@
 
 body {
 	font-family: $primary-font;
-	padding-top: calc(60px + #{$header-height-small});
+	padding-top: $header-height-small;
 	@include MQ(L) {
-		padding-top:calc(60px + #{$header-height});
+		padding-top: $header-height;
 	}
+}
+
+.content {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 h1, h2, h3 {
 	color: $color-1;
     margin: 0 0 25px 0;
+}
+.page-header {
+    margin: 0 0 20px 0;
 }
 
 // Navigation
@@ -33,18 +41,25 @@ h1, h2, h3 {
 	@include MQ(L) {
 		height: $header-height;
 	}
+    .container {
+        height: 100%;
+    }
 }
 
 .cd-auto-hide-header .logo, 
 .cd-auto-hide-header .nav-trigger {
 	position: absolute;
 	@include center(y);
-    z-index: 1;
+    z-index: 1
+}
+.cd-auto-hide-header .logo{
+    width: 45px;
+    @include MQ(S) {
+        width: 200px;
+    }
 }
 
 .cd-auto-hide-header .logo {
-	left: 5%;
-
 	a, img {
 		display: block;
 	}
@@ -119,7 +134,6 @@ h1, h2, h3 {
 	display: inline-block;
 	float: right;
 	height: 100%;
-	padding-right: 5%;
 
 	> ul {
 		position: absolute;
@@ -224,7 +238,7 @@ h1, h2, h3 {
 
 // Propostas
 .propostas-home {
-	padding: 60px 0;
+	padding: 60px 0 0 0;
     .proposta{
         .proposta-section {
             width: 100%;
