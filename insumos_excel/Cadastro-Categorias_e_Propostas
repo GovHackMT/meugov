@@ -1,0 +1,312 @@
+(+)------------------------- Cadastro das Categoria --------------------------------------(+)
+
+Ação Social
+Administração Central
+Agricultura
+Assistência Social
+Cultura Educação
+Esporte
+Infra-estrutura e transportes
+Meio Ambiente e Recursos Hídricos
+Saúde
+Segurança Pública
+Turismo
+Urbanização e Habitação
+
+(+)---------------------------------------------------------------------------------------(+)
+
+
+(+)------------------------- Cadastro das Propostas --------------------------------------(+)
+
+Propostas
+
+001
+Categoria: Infra-estrutura e transportes
+Título: Iluminação Pública
+Conteúdo: implantação do sistema de ilumi-nação pública do tipo ornamental com instalação de 27 (vinte e sete) postes de ferro galvanizado a fogo curvo duplo de 10m, na Av. Santo 
+cidade: Primavera do Leste
+----------------------------------------------------------------
+003
+Categoria: Urbanização e Habitação
+Proposta: Construção de Unidades Habitacionais
+conteudo: construção de 99 unidades habitacionais referente ao programa habitacional TÔ FELIZ, com área de 31,98m2 cada unidade, totalizando 3.166,02m2, no bairro primavera III
+Cidade: Juara
+----------------------------------------------------------------
+004
+Categoria: Infra-estrutura e Transportes
+Proposta: Reforma de ponte de Madeira
+Conteúdo: Construção de Ponte de Madeira, na Rodovia Municipal de Acorizal – Edevaldo Laurindo de Oliveira, Trecho: Entº MT -010 – Comunidade Campo Limpo sobre o Rio Jangada.
+Cidade: Acorizal
+----------------------------------------------------------------
+005
+Categoria: Segurança Pública
+Proposta: Reforma da Delegacia de Polícia
+Conteúdo: Contratação de Empresa para Reforma da Delegacia de Polícia.
+Cidade: Confresa.
+----------------------------------------------------------------
+006
+Categoria: Segurança Pública
+Proposta: CONSTRUÇÃO DE CENTRO INTEGRADO DE SEGURANÇA E CIDADANIA - CISC
+Conteúdo: CONSTRUÇÃO DO CENTRO INTEGRADO DE SEGURANÇA E CIDADANIA - CISC - para integrar as polícias civil e militar tendo um posto de atendimento mais perto da população para atender às ocorrências de maneira mais ostensiva e eficaz sempre preocupado com obem estar do cidadão.
+Cidade: Guiratinga
+----------------------------------------------------------------
+008
+Categoria: Educação
+Proposta:Creche EscolaMaria Eunice Duarte de Barros
+Conteúdo:Contratação de empresa especializada para execução de obra para REFORMA PARCIAL (adequação de 02 (duas) salas de aula,construção de 01 (um) depósito e 01(um) Banheiro para funcionários,adequação de sanitário,conforme projeto (peças para o sanitário,conforme projeto),instalações hidro-sanitárias ( peças para o sanitário a ser adequado e do banheiro para ser construído para os funcionários) instalações elétricas(das 02 salas a serem adequadas,do depósito e banheiro a ser construído) na Creche Escola Maria Eunice Duarte de Barros em Cuiabá.
+Cidade:  Cuiabá
+----------------------------------------------------------------
+009
+Categoria: Educação
+Proposta: CRECHE MARIA EUNICE
+Conteúdo: Execução de obra para ampliação da Creche Escola Maria Eunice Duarte de Barros, através da construção de dois banheiros, salão instalações elétricas e hidro sanitária em Cuiabá MT
+Cidade: Pontes e Lacerda
+----------------------------------------------------------------
+010
+Categoria: Educação
+Proposta: Criação de uma CRECHA CRIANÇA FELIZ
+Conteúdo: Construção de Creche para atender do Maternal até o primeiro ano primário.
+Cidade: VALE DE SAO DOMINGOS
+----------------------------------------------------------------
+011
+Categoria: Educação
+Proposta: Reforma e ampliação da Creche Criança Feliz
+Conteúdo: Contratação de empresa especializada para execução de obra para REFORMA PARCIAL (adequação de 02 (duas) salas de aula,construção de 01 (um) depósito e 01(um) Banheiro para funcionários,adequação de sanitário,conforme projeto (peças para o sanitário,conforme projeto),instalações hidro-sanitárias ( peças para o sanitário a ser adequado e do banheiro para ser construído para os funcionários) instalações elétricas(das 02 salas a serem adequadas,do depósito e banheiro a ser construído) na Creche Escola Maria Eunice Duarte de Barros em Cuiabá.
+Cidade:  Matupá
+----------------------------------------------------------------
+012
+Categoria: Ação Social
+Proposta: Construção do Cras
+Conteúdo: Construção do Cras para atender à população da melhor idade com aulas de artesanato, pintura e bordado, macramê e beneficiamento de produtos de couro.
+Cidade: São José dos Quatro Marcos
+----------------------------------------------------------------
+013
+Categoria: Ação Social
+Proposta: Novos Cursos para o CRAS
+Conteúdo: Planejamento de novos Cursos ministrados no CRAS de pintura em panos de prato, artesanato com palhas de milho, beneficiamento de couro.
+Cidade: Colider
+----------------------------------------------------------------
+014
+Categoria: Esporte
+Proposta: Construção de Quadra Coberta
+Conteúdo: Construção de uma quadra coberta com 693,00 m², localizada na Perimetral Leste esquina com a Rua Salvador, Bairro Bela Vista.
+Cidade: Vila Rica
+----------------------------------------------------------------
+015
+Categoria: Infra-Estrutura e Transporte
+Proposta: Construção de Ponte De Concreto Pré-Moldado Protendido
+Conteúdo: Construção de Pontes de Concreto Armado Pré-Moldado Protendido, sobre  o Rio Sabino (ext. 50,00 m, larg. 8,80 m), Córrego Catingudo (ext. 40,00 m, larg. 8,80 m) e Córrego Jacaré Valente (ext. 30,00 m, larg. 8,80 m), na Rodovia MT-437, Trecho: Confresa – Santo Antonio do Fontoura. 
+Cidade: Confresa
+----------------------------------------------------------------
+016
+Categoria: Educação
+Proposta: EE Antônio Gomes Primo
+Conteúdo: Execução de obra construção de 05 cinco quadras poli esportivas cobertas com arquibancadas de 02 degraus nas duas laterais distribuídas nos municípios de Santa Terezinha, São Jose do xingu, Vila Rica, e Primavera do Leste 
+Cidade: Santa Cruz do Xingu
+----------------------------------------------------------------
+017
+Categoria: Educação
+Proposta: EE PROFª EDELI MANTOVANI
+Conteúdo: ontratação de empresa especializada em Execução de Serviços com o Fornecimento de Todos os Materiais Necessários para as INSTALAÇÕES ELÉTRICAS, Posto de Transformação a ser realizado nas Escolas Estaduais 
+Cidade: Sinop
+----------------------------------------------------------------
+018
+Categoria: Infra-estrutura e Transporte
+Proposta: Pav. e Drenagem Av. das Itaúbas (parcial)
+Conteúdo: Obra de Pavimentação Asfaltica e Drenagem de Águas Pluviais na Av. das Itaúbas (entre a Av. dos Flamboyantes e Av. dos Jatobás) no Jardim Celeste.
+Cidade: Sorriso
+----------------------------------------------------------------
+019
+Categoria: Infra-estrutura e Transporte
+Proposta: Reconstrução de Ponte de Madeira 
+Conteúdo: Reconstrução de Pontes de Madeira, na Rodovia: MT-243, Trecho: Entº BR-158 - Entº MT-322, sobre o Córrego São João e Córrego Piabanha, com extensão de 16,0 m e 15,0 m, no Município de Ribeirão Cascalheira-MT.
+Cidade: Ribeirão Cascalheira
+----------------------------------------------------------------
+020
+Categoria: Saúde
+Proposta: sistema de abastecimento de agua composto por poços artesianos e rede de abastecimento de agua
+Conteúdo: Perfuração de 11 poços tubulares profundo tipo I e 01 poço tubular tipo II, sendo 06 poços no PA Cancela, 04 no PA Santa Lucia, 02 NO PA Cruzeiro do Norte e 01 no PA Maria Tereza no Município de Ribeirão Cascalheira e rede de abastecimento de agua com reservatório metálico para cada poço artesiano conforme projeto técnico
+Cidade: Água Boa
+----------------------------------------------------------------
+021
+Categoria: Ação Social
+Proposta: ANTIGO CRAS -CENTRO DE REFERENCIA DE ASSISTENCIA SOCIAL - ATUAL CPA - CENTRO DE PRONTO ATENDIMENTO
+Conteúdo: Confecção de calçadas e reforma da cozinha do CRAS, conforme planilha anexa, dentro do prazo constante da Cláusula Quarta e Sexta.
+Cidade: Analândia do Norte
+----------------------------------------------------------------
+022
+Categoria: Ação Social
+Proposta: CONSTRUÇÃO DE BASE PARA IMPLANTAÇÃO DE ACADEMIA TERCEIRA IDADE 
+Conteúdo: CONTRATAÇÃO DE EMPRESA PARA CONSTRUÇÃO DE BASE PARA IMPLANTAÇÃO DE ACADEMIA TERCEIRA IDADE NO MUNICIPIO DE SANTIAGO DO NORTE.
+Cidade: Santiago do Norte
+----------------------------------------------------------------
+023
+Categoria: Saúde
+Proposta: PSF 02 THAIS ZANETTE UNIDADE DE SAUDE DA FAMILIA
+Conteúdo: CONTRATAÇÃO DE EMPRESA DO RAMO PARA EXECUÇÃO DE OBRAS DE CONTRUÇÃO DE UMA UNIDADE BASICA DE SAUDE (UBS) PORTE 1.(PSF 2)
+Cidade: Peixoto de Azevedo
+----------------------------------------------------------------
+024
+Categoria: Infra-estrutura e Transporte
+Proposta: Feira Municipal
+Conteúdo: CONTRATAÇÃO DE SERVIÇOS, INCLUINDO O FORNECIMENTO DO MATERIAL   PARA CONSTRUÇÃO DE 01 ( UMA ) ESTRUTURA MISTA EM CONCRETO PRÉ MOLDADO E COBERTURA METÁLICA PARA O PAVILHÃO DA FEIRA MUNICIPAL. 
+Cidade: Nova Mutum
+----------------------------------------------------------------
+025
+Categoria: Infra-estrutura e Transporte
+Proposta: Córrego da Serra (Km 41,0) 
+Conteúdo: Serviços de Reforma e Reconstrução de Ponte de Madeira, Tipo I, na Rodovia MT-240 e Municipal de Chapada dos Guimarães, Trechos: Entrº BR-163 (Posto Gil) ¿ Entrº MT-140 (Sete Placas) e Entrº MT-403 ¿ Vila P.A. Jangada ¿ Entrº MT-403, sobre os Córregos; da Serra, Córrego Sonho Dourado e Rio Jangada I, numa extensão de 18,0m, 10,5m e 35,0m
+Cidade: Chapada dos Guimarães
+----------------------------------------------------------------
+026
+Categoria: Educação
+Proposta: Criação de Creche 
+Conteúdo: EXECUÇÃO DE OBRA DE ENGENHARIA PARA CONSTRUÇÃO DE ESCOLA DE ENSINO INFANTIL – PROJETO PROINFÂNCIA – CRECHE TIPO “B”, 
+Cidade: Rondonópolis
+----------------------------------------------------------------
+027
+Categoria: Meio ambiente e Recursos hídricos
+Proposta: Estação de Tratamento de Água
+Conteúdo: Ampliação da Estação de tratamento de água
+Cidade: Cáceres
+----------------------------------------------------------------
+028
+Categoria: Agricultura
+Proposta: Praça de Feira Livre
+Conteúdo: objetivando a execução de serviços de adequações sanitárias na Praça da Feira Livre, situada na Rua Padre Cassemiro esquina com a Rua Costa Marques, Centro, na cidade de Cáceres – MT, conforme projetos arquitetônico e hidro-sanitário, cronograma físico-financeiro e planilhas anexas.
+Cidade: Comodoro
+----------------------------------------------------------------
+029
+Categoria: Saúde
+Proposta: Reforma posto de Saúde Centro
+Conteúdo: Reforma, adequação e pintura da Unidade Básica de Saúde(PFS Centro), incluindo materiais e mão de obra, conforme Projeto, Memorial Descritivo e Planilha de Custos em anexo.
+Cidade: Aripuanã
+----------------------------------------------------------------
+030
+Categoria: Urbanização e Habitação
+Proposta: Pavimentação Asfáltica nas Ruas Cuiabá e Iguaçu
+Conteúdo: Contratação de empresa especializada para execução de obras de Pavimentação Asfáltica de aproximado de 5.909,20 m² com TSD, nas diversas ruas e avenidas da cidade de Brasnorte, conforme Cronograma Físico Financeiro de Execução da Obra, que faz parte integrante deste Edital em atendimento ao Termo de Repasse nº 0324231-30/2010/Ministério Turismo/Caixa. 
+Cidade: Brasnorte
+----------------------------------------------------------------
+031
+Categoria: Esporte
+Proposta: Construção de Muro e Alambrado no Campo de Futebol
+Conteúdo: Contratação de empresa especializada para Construção de Muro e Alambrado no Campo de Futebol no Município deBarra do Bugre-MT.
+Cidade: Barra do Bugre
+----------------------------------------------------------------
+032
+Categoria: Educação
+Proposta: Escola Municipal Rural Olavo Bilac
+Conteúdo: Fornecimento de materiais de construção para manutenção da Escola Municipal Olavo Bilac.
+Cidade: Juruena
+----------------------------------------------------------------
+033
+Categoria: Infra-estrutura e Transporte
+Proposta: Rio Corgão
+Conteúdo: Serviços de Reconstrução e Construção de Ponte de Madeira, Tipo I, na Rodovia MT-170, Trecho: Sapezal ¿ Cotriguaçu ¿ Nova União, sobre o Rio Corgão e Rio da Prata, numa extensão de 22,0m e 20,0m, respectivamente
+Cidade: Sapezal
+----------------------------------------------------------------
+034
+Categoria: Infra-estrutura e Transporte
+Proposta: Bueiros Duplo Tubular de Concreto 
+Conteúdo: Construção de Bueiros Duplo Tubular de Concreto na Estrada do Zé da Luz
+Cidade: Tangará da Serra
+----------------------------------------------------------------
+035
+Categoria: Infra-estrutura e Transporte
+Proposta: Rodovia MT-140
+Conteúdo: Serviços de Manutenção de Rodovias Não Pavimentada, na Rodovia MT-140, Trecho: Entrº MT-338 (Boa Esperança do Norte) - Entº MT-235 (Santa Rita do Trivelato), numa extensão de 60,0 Km
+Cidade: Santa Rita do Trivelato
+----------------------------------------------------------------
+036
+Categoria: Educação
+Proposta: EE. Portal da Amazônia
+Conteúdo: Contratação de empresa especializada em execução da obra para construção de quadra poliesportiva coberta modelo FNDE na dimensão (25,80 X 38,00)m com arquibancada de 2 degraus nas duas laterais, com vestiário, instalações hidro-sanitárias da quadra poliesportiva, adequações na parte hidro-sanitária existente da escola para que permita a interligação da quadra poliesportiva proposta, drenagem de águas pluviais, instalações elétricas – quadra poliesportiva, sistema de proteção contra descargas atmosféricas – SPDA, adequações na parte elétrica existente da escola para que permita a interligação da quadra poliesportiva proposta, acessibilidade na Escola Estadual Portal da Amazônia, localizada no município de Apiacás/MT.
+Cidade: Apiacás
+----------------------------------------------------------------
+037
+Categoria: Educação
+Proposta: EE JOSE DE ALENCAR
+Conteúdo: Contratação de empresa especializada em Execução de Serviços com o Fornecimento de Todos os Materiais Necessários para as INSTALAÇÕES ELÉTRICAS do Posto de Transformação nos municípios de: Água Boa, Barra do Garças, Canarana, Campinápolis, Nova Xavantina, Nova Nazaré, Novo São Joaquim, Pontal do Araguaia, Ribeirão Cascalheira, Ribeirãozinho, Santo Antônio do Leste e Torixoréu.
+Cidade: Novo sÃO JOAQUIM
+----------------------------------------------------------------
+038
+Categoria: Educação
+Proposta: E.E.I. Ikepeng - Aldeia Steinen
+Conteúdo: Construção de Escola Indígena com 01 sala de aula+conjunto de banheiros M/F +cozinha+depósito+instalações hidro-sanitárias +instalações elétrica na Aldeia Steinen - Feliz Natal.
+Cidade: Feliz Natal 
+----------------------------------------------------------------
+039
+Categoria: Educação
+Proposta: EE Juscelino Kubischeck
+Conteúdo: Execução de obra para conclusão reforma parcial instalações elétricas instalações hidro sanitárias adequação ao PNEE ampliação da cozinha e refeitório da EE Juscelino Kubistchek de Oliveira em Luciara
+Cidade: Luciara
+----------------------------------------------------------------
+040
+Categoria: Agricultura
+Proposta: Criação de Bases Físicas do Pequeno Produtor
+Conteúdo: Construção de Bases Físicas para Instalação de Agroindústrias para a Agricultura Familiar em Diversos Municípios do Estado de Mato Grosso, divididos em 06 (seis) Lotes, sendo o lote 04 – Região de Diamantino/MT.
+Cidade: Diamantino
+----------------------------------------------------------------
+041
+Categoria: Administração Central
+Proposta: POSTO FISCAL CABECEIRA ALTA
+Conteúdo: O objeto do presente é a prestação de serviços de manutenção preventiva em poços tubulares profundos  nas unidades da Secretaria de Estado de Fazenda.
+Cidade: Alto Taquari
+----------------------------------------------------------------
+042
+Categoria: Infra-estrutura e Transporte
+Proposta: Serviços de Manuntenção  de Rodovia Não Pavimentada na MT - 343 
+Conteúdo: Serviços de Manutenção de Rodovia não Pavimentada, na Rodovia MT-343, Trecho: Cáceres-Porto Estrela, Sub.Trecho: Km 16 -Porto Estrela, numa extensão de 94,80 Km, no município de Cáceres/Porto Estrela.
+Cidade: Porto Jofre
+----------------------------------------------------------------
+043
+Categoria: Infra-estrutura e Transporte
+Proposta: Trecho: Poconé  Porto Jofre, Sub-Trecho: Posto Fiscal Km 100,6, sobre as Vazante Km 25,3 
+Conteúdo: Serviços de Reforma de Pontes de Madeira, na Rodovia: MT-060, Trecho: Poconé  Porto Jofre, Sub-Trecho: Posto Fiscal  Km 100,6, sobre a Vazante Km 25,3   
+Cidade: Conquista do Oeste
+----------------------------------------------------------------
+044
+Categoria: Infra-estrutura e Transporte
+Proposta: Manutenção de Rodovia não Pavimentada
+Conteúdo: Serviços de Manutenção de Rodovia Não Pavimentada, na Rodovia MT-206, Trecho: Rio Roosevelt – Divisa  MT/ RO, Sub- Trecho : Rio Roosevelt – Divisa MT/ RO numa extensão de 110,00 Km no Município de Colniza / MT
+Cidade: Colniza
+----------------------------------------------------------------
+045
+Categoria: Turismo
+Proposta: Centro de Atendiemento ao Turista 1ª Etapa 
+Conteúdo: Construção do Centro de Atendimento ao Turista - CAT - 1ª Etapa, Urbanização e Paisagismo, no municipio de Nobres. 
+Cidade: Nobres
+----------------------------------------------------------------
+046
+Categoria: Infra-estrutura e Transporte
+Proposta: Drenagem e Pavimentação
+Conteúdo: Obras de  Drenagem de Pavimentação Asfáltica, nos seguintes logradouros: Av Deputado José Geraldo Riva, Av. Rio Borges, Av. João Paulo II, Rua dos Trabalhadores, Av. Santa Catarina (lado esquerdo e lado direito), Rua Murici, Rua Buritis, Rua das Flores, Rua Passo Fundo, Rua Santo Antonio, Rua Fortaleza e Rua Waldecir Martins, com extensão total de 35.340,00 m², no município de Itanhangá-MT.
+Cidade: Itanhagá
+----------------------------------------------------------------
+047
+Categoria: Turismo
+Proposta: Cachoeira da Mulata
+Conteúdo: Reestruturação no Circuito da Cachoeira da Mulata, no Município de Jaciara – MT
+Cidade: Jaciara
+----------------------------------------------------------------
+048
+Categoria: Turismo
+Proposta: Ruas e avenidas do Município de Alta Floresta
+Conteúdo: Execução de obra de infraestrutura viária turística de pavimentação asfáltica e drenagem de águas pluviais em ruas e avenidas do município de Alta Floresta-MT.
+Cidade: Alta Floresta
+----------------------------------------------------------------
+049
+Categoria: Ação Social
+Proposta: Sede da EMPAER
+Conteúdo: Reforma do Escritório Sede da EMPAER, localizado na Praça da Bíblia, L 03 e 04, Q 93, Vila Nova, no Município de Arenápolis-MT
+Cidade: Areanópolis
+----------------------------------------------------------------
+050
+Categoria: Agricultura
+Proposta: Criação de Bases Físicas de Agricultura
+Conteúdo: Construção de Bases Físicas para Instalação de Agroindústrias para a Agricultura Familiar em Diversos Municípios do Estado de Mato Grosso, divididos em 06 (seis) Lotes, sendo o lote 04 – Região de Tapurah/MT.
+Cidade: Tapurah
+(+)---------------------------------------------------------------------------------------(+)
+
+

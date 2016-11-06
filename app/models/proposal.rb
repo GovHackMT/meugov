@@ -37,6 +37,10 @@ class Proposal < ActiveRecord::Base
     filters
   end
 
+  def self.avaliable
+    associations.open
+  end
+
   def to_param
     "#{id}-#{title.parameterize}"
   end
