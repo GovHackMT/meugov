@@ -60,35 +60,36 @@
 	});
 	-->
 </script>
+<div class="mapa">
+	<div class="row">
+		<div class="col-md-9">
+			<div id="mainmap"></div>
+		</div>
+		<div class="col-md-3">
+			<div class="top-proposals">
 
-<div class="row">
-	<div class="col-md-9">
-		<div id="mainmap"></div>
-	</div>
-	<div class="col-md-3">
-		<div class="top-proposals">
+				<div class="top-proposals-header">
+					<h3><span class="fa fa-heart-o"></span> Propostar populares</h3>
+				</div>
 
-			<div class="top-proposals-header">
-				<h3><span class="fa fa-heart-o"></span> Propostar populares</h3>
-			</div>
-
-			<% @popular_proposals.each do |proposal| %>
-			<div class="top-proposals-item">
-				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
-				<div class="top-proposals-info">
-					<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal %></strong></div>
-					<div class="top-proposals-meta">
-						<%= proposal.proposal_votes_count %> Votos
-						<%= fa_icon 'comment-o', text: proposal.comments.count %>
-						<span class="label label-success"><%= number_to_percentage proposal.thermometer %>% Positivo</span>
+				<% @popular_proposals.each do |proposal| %>
+				<div class="top-proposals-item">
+					<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
+					<div class="top-proposals-info">
+						<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal %></strong></div>
+						<div class="top-proposals-meta">
+							<%= proposal.proposal_votes_count %> Votos
+							<%= fa_icon 'comment-o', text: proposal.comments.count %>
+							<span class="label label-success"><%= number_to_percentage proposal.thermometer %>% Positivo</span>
+						</div>
+					</div>
+					<div class="top-proposals-actions">
+						<a class="btn btn-primary move-map-btn" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
 					</div>
 				</div>
-				<div class="top-proposals-actions">
-					<a class="btn btn-primary move-map-btn" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
-				</div>
-			</div>
-			<% end %>
+				<% end %>
 
+			</div>
 		</div>
 	</div>
 </div>
