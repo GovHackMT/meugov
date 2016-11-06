@@ -2,10 +2,10 @@
 
 <%= form_tag report_proposals_result_path, class: 'form-inline', method: :get, remote: true do |f| %>
   <div class="form-group">
-    <%= select_tag :city_id, options_from_collection_for_select(City.order(:name), 'id', 'name', params[:city_id]), prompt: Proposal.human_attribute_name(:city_id), class: "form-control" %>
+    <%= select_tag :city_id, options_from_collection_for_select(City.with_proposals, 'id', 'name', params[:city_id]), prompt: Proposal.human_attribute_name(:city_id), class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= select_tag :proposal_category_id, options_from_collection_for_select(ProposalCategory.order(:name), 'id', 'name', params[:proposal_category_id]), prompt: Proposal.human_attribute_name(:proposal_category_id), class: "form-control" %>
+    <%= select_tag :proposal_category_id, options_from_collection_for_select(ProposalCategory.with_proposals, 'id', 'name', params[:proposal_category_id]), prompt: Proposal.human_attribute_name(:proposal_category_id), class: "form-control" %>
   </div>
   <%= button_tag fa_icon('filter', text: t('filters_submit')), class: 'btn btn-primary' %>
 <% end %>
