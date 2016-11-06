@@ -12,4 +12,16 @@ module ProposalsHelper
       }
     end.to_json.html_safe
   end
+
+  def thermometer_progress(total)
+    if total > 66.66
+      css_class = 'progress-bar-success'
+    elsif total > 33.33 and total < 66.66
+      css_class = 'progress-bar-warning'
+    else
+      css_class = 'progress-bar-danger'
+    end
+
+    css_class
+  end
 end

@@ -37,6 +37,10 @@ class Proposal < ActiveRecord::Base
     filters
   end
 
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
+
   def update_thermometer
     self.thermometer = total_votes > 0 ? ((total_yes.to_f / total_votes.to_f) * 100) : 0
     self.save
