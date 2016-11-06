@@ -3,12 +3,14 @@
 		<div class="box-banner">
 			<h1>Vamos juntos construir nosso Estado</h1>
 			<p>Nós queremos saber sua opinião...</p>
-			<div class="input-group">
-		      <input type="text" class="form-control input-lg" placeholder="Procurar propostas...">
+			<%= form_tag proposals_path, method: 'get' do %>
+				<div class="input-group">
+		      <%= text_field_tag :q, nil, class: 'form-control input-lg', placeholder: 'Procurar propostas...' %>
 		      <span class="input-group-btn">
 		        <button class="btn btn-primary btn-lg" type="button"><%= fa_icon 'search' %></button>
 		      </span>
 		    </div>
+			<% end %>
 		</div>
 	</div>
 </section>
