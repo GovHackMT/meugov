@@ -37,7 +37,9 @@
 		width: 100%;
 	}
 	@include MQ(S) {
-		height: 550px;
+		#mainmap {
+			height: 550px;
+		}
 	}
 }
 
