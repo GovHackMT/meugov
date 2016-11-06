@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
   def index
-    @proposals = Proposal.associations.open
-    @popular_proposals = Proposal.associations.open.popular
+    @proposals = Proposal.avaliable
+    @popular_proposals = Proposal.avaliable.popular
 
-    @government_proposals = Proposal.associations.open.government
-    @society_proposals = Proposal.associations.open.society
+    @government_proposals = Proposal.avaliable.government
+    @society_proposals = Proposal.avaliable.society
   end
 end
