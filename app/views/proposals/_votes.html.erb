@@ -11,8 +11,6 @@
 
     <a class="btn btn-default btn-disabled" data-toggle="tooltip" data-placement="top" title="Você só pode votar apenas uma vez" disabled><span class="fa fa-thumbs-o-down"></span> <span id="no"><%= proposal.total_no %></span></a>
 
-		<!-- <p><span class="text-info">Você só pode votar apenas uma vez</span></p> -->
-
   <% else %>
 
     <%= link_to fa_icon('thumbs-o-up', text: "<span id=\"yes\">#{proposal.total_yes}</span>".html_safe), vote_proposal_path(proposal, answer: 'yes'), class: 'btn btn-default', remote: true, method: :post %>
@@ -32,5 +30,4 @@
 
   <a class="btn btn-default btn-disabled" data-toggle="tooltip" data-placement="top" title="Você precisa logar para votar" disabled><span class="fa fa-thumbs-o-down"></span> <span id="no"><%= proposal.total_no %></span></a>
 
-  <!-- <p><span class="text-info">Você só pode votar apenas uma vez</span></p> -->
 <% end %>
