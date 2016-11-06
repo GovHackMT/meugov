@@ -14,18 +14,18 @@
 
         var center = {lat:<%= proposal.city.latitude %>, lng:<%= proposal.city.longitude %>};
 
-        map<%= proposal.id %> = new google.maps.Map(document.getElementById('map<%= proposal.id %>'), {
-          center: center,
-          scrollwheel: false,
-          zoom: 12
+        var myLatLng = center;
+
+        var map = new google.maps.Map(document.getElementById('map<%= proposal.id %>'), {
+          zoom: 8,
+          center: myLatLng
         });
 
-        var myLatlng = new google.maps.LatLng(<%= proposal.city.latitude %>, <%= proposal.city.latitude %>);
         var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map<%= proposal.id %>,
-            title: '<%= proposal.title %>',
-            icon: '/images/icon_blue.png',
+          position: myLatLng,
+          map: map,
+          title: '<%= proposal.title %>',
+          icon: '/images/icon_blue.png'
         });
 
       }
