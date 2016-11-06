@@ -17,7 +17,7 @@ class Proposal < ActiveRecord::Base
   validates :proposal_category_id, presence: true
 
   # Scopes
-  scope :popular, -> { order('proposal_votes_count DESC') }
+  scope :popular, -> { order('proposal_votes_count DESC').order('thermometer DESC') }
   scope :government, -> { where('users.role = ?', User.roles[:government]) }
   scope :society, -> { where('users.role <> ?', User.roles[:government]) }
 

@@ -83,7 +83,11 @@
 				<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
 				<div class="top-proposals-info">
 					<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal %></strong></div>
-					<div class="top-proposals-meta"><%= proposal.proposal_votes_count %> Votos <span class="label label-success"><%= number_to_percentage proposal.thermometer %>% Positivo</span></div>
+					<div class="top-proposals-meta">
+						<%= proposal.proposal_votes_count %> Votos
+						<%= fa_icon 'comment-o', text: proposal.comments.count %>
+						<span class="label label-success"><%= number_to_percentage proposal.thermometer %>% Positivo</span>
+					</div>
 				</div>
 				<div class="top-proposals-actions">
 					<a class="btn btn-primary move-map-btn" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
