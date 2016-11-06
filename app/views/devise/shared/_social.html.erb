@@ -1,0 +1,6 @@
+<%- if devise_mapping.omniauthable? %>
+<br />
+  <h2>Ou</h2>
+  <%= link_to fa_icon('facebook-official', text: t(".new_session_link", provider: 'Facebook')), omniauth_authorize_path(resource_name, 'facebook'), class: 'btn btn-facebook btn-lg active' %>
+  <%= link_to fa_icon('github', text: t(".new_session_link", provider: 'Github')), omniauth_authorize_path(resource_name, 'github'), class: 'btn btn-github btn-lg active' %>
+<% end -%>
