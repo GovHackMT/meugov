@@ -10,7 +10,15 @@
 
       var map<%= proposal.id %> = null;
 
+      var carreguei = false;
+
       function initMap() {
+
+        if(carreguei) {
+          return;
+        }
+
+        carreguei = true;
 
         var center = {lat:<%= proposal.city.latitude %>, lng:<%= proposal.city.longitude %>};
 
