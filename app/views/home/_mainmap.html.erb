@@ -4,9 +4,25 @@
 
 		var map = null;
 
+		var carreguei = false;
+
 		var dataLocations = <%= proposals_as_json(@proposals) %>;
 
+		var dataIdStore = new Array();
+		var markersTop = {};
+
+		$('.top-proposals-item .move-map-btn').each(function(){
+			dataIdStore.push($(this).data('id'));
+		});
+
+
 		function initMap() {
+
+			if(carreguei) {
+				return;
+			}
+
+			carreguei = true;
 
 			var center = {lat:-12.54528, lng:-55.71139};
 
@@ -21,6 +37,7 @@
 
 			for (var i = 0; i < dataLocations.length; i++) {
 			    var data = dataLocations[i];
+
 			    var myLatlng = new google.maps.LatLng(data.lat, data.lng);
 			    var marker = new google.maps.Marker({
 			        position: myLatlng,
@@ -28,6 +45,11 @@
 			        title: data.title,
 			        icon: '/images/' + data.icon,
 			    });
+
+			    if(jQuery.inArray(data.id,dataIdStore) == -1) {
+			    } else {
+			    	markersTop[data.id] = marker;
+			    }
 
 			    // Click function at the markers
 			    (function (marker, data) {
@@ -49,30 +71,9 @@
 		google.maps.event.addDomListener(window, "load", initMap);
 		google.maps.event.addDomListener(window, "turbolinks:load", initMap);
 
-
 		$('.move-map-btn').click(function(){
-				
-				var lat = $(this).data('lat');
-				var lng = $(this).data('lng');
-				var title = $(this).parents('.top-proposals-title').find('.top-proposals-title').text();
-				var city = $(this).data('city');
-				var area = '';
-				var link = '';
-				var center = new google.maps.LatLng(lat, lng);
-
-				var contentString = '<div id="content">'+
-					'<h4><strong>' + title + '</strong></h4>'+
-					'<p><%= fa_icon('map') %> ' + city + '</p>'+
-					'<p><%= fa_icon('bookmark') %> ' + area + '</p>'+
-					'<div><a href="' + link + '" class="btn btn-sm btn-primary">Mais Detalhes</a></div>'+
-					'</div>';
-
-				var infowindow = new google.maps.InfoWindow({
-				  content: contentString
-				});
-
-				//infowindow.open(map, center);
-		    map.panTo(center);
+				console.log(markersTop[$(this).data('id')]);
+				google.maps.event.trigger(markersTop[$(this).data('id')], 'click');
 		})
 
 
@@ -94,7 +95,7 @@
 				<% @popular_proposals.each do |proposal| %>
 				<div class="top-proposals-item">
 					<div class="top-proposals-actions">
-						<a class="btn btn-primary move-map-btn" data-city="<%= proposal.city %>" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
+						<a class="btn btn-primary move-map-btn" data-id="<%= proposal.id %>" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
 					</div>
 					<div class="top-proposals-info">
 						<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal, class: 'top-proposals-link' %></strong></div>
