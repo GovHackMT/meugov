@@ -14,6 +14,7 @@ Tecnologias
 * Rails 4.2.5
 * MySQL 5.x
 * HTML, CSS (Sass) e Javascript (jQuery)
+* Bootstrap 3
 * OS Like-Unix
 * Responsivo
 * Turbolinks

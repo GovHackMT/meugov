@@ -29,6 +29,7 @@ class Proposal < ActiveRecord::Base
     filters = associations
     filters = filters.where("proposals.title LIKE '%%%s%%' OR proposals.content LIKE '%%%s%%'", params[:q], params[:q]) if params[:q].present?
     filters = filters.where(city_id: params[:city_id]) if params[:city_id].present?
+    filters = filters.where(user_id: params[:user_id]) if params[:user_id].present?
     filters = filters.where(proposal_category_id: params[:proposal_category_id]) if params[:proposal_category_id].present?
     filters = filters.government if params[:role] == 'government'
     filters = filters.society if params[:role] == 'society'

@@ -56,7 +56,7 @@
       <div class="proposta-writer">
         <div class="proposta-writer-name"><%= fa_icon 'map', text: @proposal.city.name_with_state %></div>
         <span class="proposta-date"><%= fa_icon 'calendar', text: l(@proposal.created_at) %></span>
-        <div class="proposta-writer-designation">por: <%= @proposal.user.name %></div>
+        <div class="proposta-writer-designation">por: <%= link_to @proposal.user.name, show_user_path(@proposal.user) %></div>
       </div>
 
       <div id="itemmap"></div>
