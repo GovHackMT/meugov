@@ -2,6 +2,7 @@ module ProposalsHelper
   def proposals_as_json(proposals)
     proposals.collect do |proposal|
       {
+        id: proposal.id,
         lat: proposal.city.latitude,
         lng: proposal.city.longitude,
         title: proposal.title,

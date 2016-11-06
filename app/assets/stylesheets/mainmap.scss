@@ -33,8 +33,13 @@
 .mapa {
 	margin-top: 350px;
 	#mainmap {
-		height: 550px;
+		height: 320px;
 		width: 100%;
+	}
+	@include MQ(S) {
+		#mainmap {
+			height: 550px;
+		}
 	}
 }
 
