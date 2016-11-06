@@ -42,5 +42,5 @@ var ready_main = function() {
 	}
 }
 
-jQuery(document).ready(ready_main);
+jQuery(window).load(ready_main);
 jQuery(document).on('turbolinks:load', ready_main);
