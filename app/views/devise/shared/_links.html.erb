@@ -21,12 +21,8 @@
 <% end -%>
 
 <%- if devise_mapping.omniauthable? %>
-  <%= link_to t(".new_session_link", provider: 'Facebook'), omniauth_authorize_path(resource_name, 'facebook') %><br />
-  <%= link_to t(".new_session_link", provider: 'Github'), omniauth_authorize_path(resource_name, 'github') %><br />
+<br />
+  <h2>Ou</h2>
+  <%= link_to fa_icon('facebook-official', text: t(".new_session_link", provider: 'Facebook')), omniauth_authorize_path(resource_name, 'facebook'), class: 'btn btn-facebook btn-lg active' %>
+  <%= link_to fa_icon('github', text: t(".new_session_link", provider: 'Github')), omniauth_authorize_path(resource_name, 'github'), class: 'btn btn-github btn-lg active' %>
 <% end -%>
-
-<hr />
-<h2>Ou</h2>
-
-<a href="#" class="btn btn-facebook btn-lg active" role="button"><i class="fa fa-facebook-official"></i> Login com Facebook</a>
-<a href="#" class="btn btn-github btn-lg active" role="button"><i class="fa fa-github"></i> Login com Github</a>
