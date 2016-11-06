@@ -8,7 +8,13 @@
       <div class="checkbox"><%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
       <%= f.button :submit, t(".submit"), class: "btn-primary" %>
     <% end %>
+    
+  </div>
+  <div class="col-md-6">
+  	<%= render "devise/shared/social" %>
   </div>
 </div>
 
 <%= render "devise/shared/links" %>
+
+
