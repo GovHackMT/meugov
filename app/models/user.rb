@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   # Associations
   belongs_to :city
 
+  # Validations
+  validates :city_id, presence: true
+
   def nickname
     name? ? self.name : self.email
   end

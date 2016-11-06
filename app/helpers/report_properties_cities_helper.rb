@@ -1,0 +1,2 @@
+module ReportPropertiesCitiesHelper
+end

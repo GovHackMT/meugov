@@ -29,6 +29,7 @@ class Proposal < ActiveRecord::Base
     filters = associations
     filters = filters.where("proposals.title LIKE '%%%s%%' OR proposals.content LIKE '%%%s%%'", params[:q], params[:q]) if params[:q].present?
     filters = filters.where(city_id: params[:city_id]) if params[:city_id].present?
+    filters = filters.where(proposal_category_id: params[:proposal_category_id]) if params[:proposal_category_id].present?
     filters = filters.government if params[:role] == 'government'
     filters = filters.society if params[:role] == 'society'
 
@@ -37,7 +38,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def update_thermometer
-    self.thermometer = total_votes > 0 ? ((total_yes / total_votes) * 100) : 0
+    self.thermometer = total_votes > 0 ? ((total_yes.to_f / total_votes.to_f) * 100) : 0
     self.save
   end
 

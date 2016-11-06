@@ -1,4 +1,6 @@
 class ProposalCategoriesController < ApplicationController
+  before_action :authenticate_user!
+  authorize_resource
   before_action :set_proposal_category, only: [:show, :edit, :update, :destroy]
 
   # GET /proposal_categories

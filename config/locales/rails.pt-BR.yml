@@ -251,6 +251,7 @@ pt-BR:
         created_at: "Criação"
         updated_at: "Atualização"
         last_sign_in_at: "Último acesso"
+        city_id: "Cidade"
 
       proposal:
         proposal_category_id: "Categoria"
@@ -265,6 +266,10 @@ pt-BR:
         neighborhood: "Bairro"
         cep: "CEP"
         q: "Busca"
+
+      property:
+        property_category_id: "Categoria"
+        city_id: "Cidade"
 
   mail_form:
     models:

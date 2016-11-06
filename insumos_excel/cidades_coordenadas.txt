@@ -1,7 +1,7 @@
 Acorizal;-15.20472;-56.36583
 agua Boa ;-14.05;-52.15861
 Alta Floresta;-9.87556;-56.08611
-Alto Araguainha;-17.31472;-53.21528
+Alto Araguaia;-17.31472;-53.21528
 Alto Boa Vista;-11.67444;-51.3877
 Alto Garcas;-16.94389;-53.52806
 Alto Paraguai;-14.51361;-56.4825

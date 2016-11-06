@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105215952) do
+ActiveRecord::Schema.define(version: 20161105231724) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "state_id",   limit: 4
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20161105215952) do
     t.decimal  "pib",                    precision: 10
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.float    "latitude",   limit: 24
-    t.float    "longitude",  limit: 24
+    t.string   "latitude",   limit: 255
+    t.string   "longitude",  limit: 255
   end
 
   add_index "cities", ["state_id"], name: "index_cities_on_state_id", using: :btree
@@ -37,6 +37,30 @@ ActiveRecord::Schema.define(version: 20161105215952) do
 
   add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "properties", force: :cascade do |t|
+    t.integer  "property_category_id", limit: 4
+    t.string   "name",                 limit: 255
+    t.string   "street",               limit: 255
+    t.string   "number",               limit: 255
+    t.string   "complement",           limit: 255
+    t.string   "neighborhood",         limit: 255
+    t.string   "cep",                  limit: 255
+    t.integer  "city_id",              limit: 4
+    t.float    "latitude",             limit: 24
+    t.float    "longitude",            limit: 24
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "properties", ["city_id"], name: "index_properties_on_city_id", using: :btree
+  add_index "properties", ["property_category_id"], name: "index_properties_on_property_category_id", using: :btree
+
+  create_table "property_categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "proposal_categories", force: :cascade do |t|
     t.string   "name",       limit: 255
