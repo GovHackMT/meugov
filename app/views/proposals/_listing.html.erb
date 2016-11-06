@@ -71,7 +71,9 @@
                 </div>
                 <hr class="mini">
                 <div class="row">
-                  <!-- <div class="col-md-4" id="votes"><%= render 'proposals/votes', proposal: proposal %></div> -->
+                  <% if false %>
+                  <div class="col-md-4" id="votes"><%= render 'proposals/votes', proposal: proposal %></div>
+                  <% end %>
                   <div class="col-md-12" id="thermometer">
                     <%= render 'proposals/thermometer', total: proposal.thermometer %>
                   </div>
