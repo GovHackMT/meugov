@@ -19,7 +19,6 @@ h1, h2, h3 {
 .page-header {
     margin: 0 0 20px 0;
 }
-
 .btn-facebook {
     background: #3b5998;
     color: $color-3;
@@ -28,7 +27,6 @@ h1, h2, h3 {
         color: $color-3;
     }
 }
-
 .btn-github {
     background: #333333;
     color: $color-3;
@@ -37,6 +35,48 @@ h1, h2, h3 {
         color: $color-3;
     }
 }
+.btn-envie-caso {
+    position: fixed;
+    right: 15px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    bottom: 15px;
+    z-index: 1;
+    background: $color-2;
+    color: $color-3;
+    border: solid 2px $color-1;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    padding: 0;
+    padding-top: 11px;
+    line-height: 1;
+    box-shadow: 0 0 0 5px rgba(00,00,00,0.1);
+    transition: border ease-in-out 0.3s;
+    &:hover, &:focus {
+        color: $color-3;
+        border-color: $color-2;
+    }
+    .fa {
+        font-size: 30px;
+        margin-bottom: 5px;
+    }
+    @include MQ(M) {
+        width: 85px;
+        height: 85px;
+        padding-top: 9px;
+        .fa {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+    }
+}
+.btn-envie-caso.animated {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+} 
 
 // Navigation
 .cd-auto-hide-header {
