@@ -9,10 +9,137 @@
 }
 
 .maplist {
-	width: 320px;
-	height: 200px;
+	width: 100%;
+	height: 225px;
+	border: solid 1px #cecece;
  }
 .media-avatar {
 	float: left;
 	margin-right: 10px;
+}
+
+
+// Propostas
+.propostas-list {
+	padding: 60px 0;
+    .proposta{
+
+        .proposta-section {
+            width: 100%;
+            height: auto;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            position: relative;
+            h3 {
+                margin: 0;
+                font-size: 2rem;
+            }
+        }
+        .proposta-desc {
+            text-align:left;
+            // i {
+            //     border: 1px solid #f5f5f5;
+            //     border-radius: 50%;
+            //     height: 60px;
+            //     padding: 3px;
+            //     font-size: 42px;
+            //     text-align: center;
+            //     line-height: 1.2;
+            //     margin-left: 6px;
+            // }
+            .progress {
+                margin-top: 5px;
+                margin-bottom: 0px;
+                background: #FFF;
+                border: solid 1px #CCC;
+            }
+        }
+        .proposta-avatar {
+					display: inline-block;
+        }
+        .proposta-writer {
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 10px;
+        }
+        .proposta-writer-name {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .proposta-writer-designation {
+            font-size: 85%;
+        }
+        .proposta-writer-company {
+            font-size: 85%;
+        }
+        // Success
+        // &.proposta-success{
+        //     .proposta-section{
+        //         border-color: #5CB85C;
+        //         color: #449d44;
+        //         h3 {
+        //             a {
+        //                 color: #5cb85c;                
+        //             }
+        //         }
+        //     }
+        //     .proposta-desc{
+        //         i{
+        //             color: #5CB85C;
+        //             border-color: #5CB85C;
+        //         }
+        //     }
+        //     .proposta-writer-name{
+        //         color: #5CB85C;
+        //     }
+
+        // }
+        // // Warning
+        // &.proposta-warning{
+        //     .proposta-section{
+        //         border-color: #F0AD4E;
+        //         color: #d58512;
+        //         h3 {
+        //             a {
+        //                 color: #F0AD4E;                
+        //             }
+        //         }
+        //     }
+        //     .proposta-desc{
+        //         i{
+        //             color: #F0AD4E;
+        //             border-color: #F0AD4E;
+        //         }
+        //     }
+        //     .proposta-writer-name{
+        //         color: #F0AD4E;
+        //     }
+        // }
+        // // Danger
+        // &.proposta-danger{
+        //     .proposta-section{
+        //         border-color: #D9534F;
+        //         color: #c9302c;
+        //          h3 {
+        //             a {
+        //                 color: #D9534F;                
+        //             }
+        //         }
+        //     }
+        //     .proposta-desc{
+        //         i{
+        //             color: #D9534F;
+        //             border-color: #D9534F;
+        //         }
+        //     }
+        //     .proposta-writer-name{
+        //         color: #D9534F;
+        //     }
+        // }
+    }
+}
+
+hr.mini {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }

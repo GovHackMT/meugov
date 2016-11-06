@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105231724) do
+ActiveRecord::Schema.define(version: 20161106111347) do
 
   create_table "cities", force: :cascade do |t|
     t.integer  "state_id",   limit: 4
@@ -124,6 +124,8 @@ ActiveRecord::Schema.define(version: 20161105231724) do
     t.string   "name",                   limit: 255
     t.integer  "city_id",                limit: 4
     t.integer  "role",                   limit: 4
+    t.string   "provider",               limit: 255
+    t.string   "uid",                    limit: 255
   end
 
   add_index "users", ["city_id"], name: "index_users_on_city_id", using: :btree

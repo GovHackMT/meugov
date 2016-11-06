@@ -1,5 +1,5 @@
 <div class="progress">
-  <div class="progress-bar" role="progressbar" aria-valuenow="<%= total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= total %>%;">
+  <div class="progress-bar <%= thermometer_progress total %>" role="progressbar" aria-valuenow="<%= total %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= total %>%;">
     <span><%= number_to_percentage total %></span>
   </div>
 </div>
