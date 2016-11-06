@@ -8,8 +8,12 @@ module ApplicationHelper
   end
 
   def avatar_url(model)
-    gravatar_id = Digest::MD5::hexdigest(model.email).downcase
-    "http://gravatar.com/avatar/#{gravatar_id}?s=48&d=mm"
+    if model.government?
+      "/images/logo-governo-mt.jpg"
+    else
+      gravatar_id = Digest::MD5::hexdigest(model.email).downcase
+      "http://gravatar.com/avatar/#{gravatar_id}?s=48&d=mm"
+    end
   end
 
   def avatar_tag(model, options = {})
