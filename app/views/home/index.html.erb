@@ -30,7 +30,7 @@
 						</div>
 						<div class="proposta-desc">
 							<div class="row">
-								<div class="col-sm-6">
+								<div class="col-sm-8">
 									<%= fa_icon 'map-marker' %>
 									<div class="proposta-writer">
 										<div class="proposta-writer-name"><%= proposal.city.name %></div>
@@ -38,7 +38,7 @@
 										<span class="proposta-date"><%= l proposal.created_at, format: :only_date %></span>
 									</div>
 								</div>
-								<div class="col-sm-6">
+								<div class="col-sm-4">
 									<span>Índice de aprovação</span>
 									<%= render "proposals/thermometer", total: proposal.thermometer %>
 								</div>
@@ -62,7 +62,7 @@
 						</div>
 						<div class="proposta-desc">
 							<div class="row">
-								<div class="col-sm-6">
+								<div class="col-sm-8">
 									<%= fa_icon 'map-marker' %>
 									<div class="proposta-writer">
 										<div class="proposta-writer-name"><%= proposal.city.name %></div>
@@ -70,7 +70,7 @@
 										<span class="proposta-date"><%= l proposal.created_at, format: :only_date %></span>
 									</div>
 								</div>
-								<div class="col-sm-6">
+								<div class="col-sm-4">
 									<span>Índice de aprovação</span>
 									<%= render "proposals/thermometer", total: proposal.thermometer %>
 								</div>
