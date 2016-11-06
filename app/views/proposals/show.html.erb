@@ -70,6 +70,7 @@
 
       <div id="thermometer"><%= render 'thermometer', total: @proposal.thermometer %></div>
 
+      <%= render_shareable buttons: [:facebook, :twitter, :google_plus, :pinterest, :tumblr], turbolinks: true %>
     </div>
 
   </div>
@@ -77,7 +78,7 @@
 </div>
 <div class="row">
   <div class="col-md-12">
-    <h3><span class="fa fa-comments-o"></span> <%= t 'comments.title' %> - <small><%= @proposal.comments.count %> Comentários</small></h3> 
+    <h3><span class="fa fa-comments-o"></span> <%= t 'comments.title' %> - <small><%= @proposal.comments.count %> Comentários</small></h3>
     <% if user_signed_in? %>
       <%= render 'comments/new' %>
     <% else %>

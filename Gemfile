@@ -65,4 +65,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
+gem 'shareable'
 
