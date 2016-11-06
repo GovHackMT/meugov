@@ -1,5 +1,3 @@
-
-
   <script>
     <!--
     jQuery(function() {
@@ -10,17 +8,18 @@
 
         var center = {lat:<%= @proposal.city.latitude %>, lng:<%= @proposal.city.longitude %>};
 
-        map = new google.maps.Map(document.getElementById('itemmap'), {
-          center: center,
-          scrollwheel: false,
-          zoom: 12
+        var myLatLng = center;
+
+        var map = new google.maps.Map(document.getElementById('itemmap'), {
+          zoom: 8,
+          center: myLatLng
         });
 
-        var myLatlng = new google.maps.LatLng(<%= @proposal.city.latitude %>, <%= @proposal.city.latitude %>);
         var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: '<%= @proposal.title %>'
+          position: myLatLng,
+          map: map,
+          title: '<%= @proposal.title %>',
+          icon: '/images/icon_blue.png'
         });
 
       }
