@@ -17,7 +17,7 @@ class Proposal < ActiveRecord::Base
   validates :proposal_category_id, presence: true
 
   # Scopes
-  scope :popular, -> { order('proposal_votes_count DESC') }
+  scope :popular, -> { order('proposal_votes_count DESC').order('thermometer DESC') }
   scope :government, -> { where('users.role = ?', User.roles[:government]) }
   scope :society, -> { where('users.role <> ?', User.roles[:government]) }
 
@@ -38,7 +38,7 @@ class Proposal < ActiveRecord::Base
   end
 
   def update_thermometer
-    self.thermometer = total_votes > 0 ? ((total_yes / total_votes) * 100) : 0
+    self.thermometer = total_votes > 0 ? ((total_yes.to_f / total_votes.to_f) * 100) : 0
     self.save
   end
 

@@ -6,12 +6,10 @@ class Ability
 
     if user.admin?
         can :manage, :all
-    elsif user.government?
-        can [:read, :create, :update], Proposal
-        can [:read, :create, :update], Comment
-    elsif user.citizen?
-        can [:read, :create, :update], Proposal
-        can [:read, :create, :update], Comment
+    elsif user.government? or user.citizen?
+        can :manage, Proposal
+        can :manage, Comment
+        can :manage, ProposalVote
     else
         can :read, :all
     end

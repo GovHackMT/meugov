@@ -251,6 +251,7 @@ pt-BR:
         created_at: "Criação"
         updated_at: "Atualização"
         last_sign_in_at: "Último acesso"
+        city_id: "Cidade"
 
       proposal:
         proposal_category_id: "Categoria"

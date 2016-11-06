@@ -1,19 +1,16 @@
 jQuery(document).ready(function($){
 	var mainHeader = $('.cd-auto-hide-header'),
-		//secondaryNavigation = $('.cd-secondary-nav'),
-		//this applies only if secondary nav is below intro section
-		//belowNavHeroContent = $('.sub-nav-hero'),
 		headerHeight = mainHeader.height();
 	
-	//set scrolling variables
+	// variables
 	var scrolling = false,
 		previousTop = 0,
 		currentTop = 0,
 		scrollDelta = 10,
-		scrollOffset = 150;
+		scrollOffset = 50;
 
 	mainHeader.on('click', '.nav-trigger', function(event){
-		// open primary navigation on mobile
+		// mobile
 		event.preventDefault();
 		mainHeader.toggleClass('nav-open');
 	});
@@ -34,12 +31,9 @@ jQuery(document).ready(function($){
 	function autoHideHeader() {
 		var currentTop = $(window).scrollTop();
 
-		//there's no secondary nav or secondary nav is below primary nav
 	    if (previousTop - currentTop > scrollDelta) {
-	    	//if scrolling up...
 	    	mainHeader.removeClass('is-hidden');
 	    } else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-	    	//if scrolling down...
 	    	mainHeader.addClass('is-hidden');
 	    }
 
