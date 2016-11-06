@@ -51,9 +51,27 @@
 
 
 		$('.move-map-btn').click(function(){
+				
 				var lat = $(this).data('lat');
 				var lng = $(this).data('lng');
+				var title = $(this).parents('.top-proposals-title').find('.top-proposals-title').text();
+				var city = $(this).data('city');
+				var area = '';
+				var link = '';
 				var center = new google.maps.LatLng(lat, lng);
+
+				var contentString = '<div id="content">'+
+					'<h4><strong>' + title + '</strong></h4>'+
+					'<p><%= fa_icon('map') %> ' + city + '</p>'+
+					'<p><%= fa_icon('bookmark') %> ' + area + '</p>'+
+					'<div><a href="' + link + '" class="btn btn-sm btn-primary">Mais Detalhes</a></div>'+
+					'</div>';
+
+				var infowindow = new google.maps.InfoWindow({
+				  content: contentString
+				});
+
+				//infowindow.open(map, center);
 		    map.panTo(center);
 		})
 
@@ -75,12 +93,11 @@
 
 				<% @popular_proposals.each do |proposal| %>
 				<div class="top-proposals-item">
-					<!-- <div class="top-proposals-image"><img src="http://placehold.it/350x150" alt="" class="img-responsive"></div> -->
 					<div class="top-proposals-actions">
-						<a class="btn btn-primary move-map-btn" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
+						<a class="btn btn-primary move-map-btn" data-city="<%= proposal.city %>" data-lat="<%= proposal.city.latitude %>" data-lng="<%= proposal.city.longitude %>"><span class="fa fa-map-marker"></span></a>
 					</div>
 					<div class="top-proposals-info">
-						<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal %></strong></div>
+						<div class="top-proposals-title"><strong><%= link_to proposal.title, proposal, class: 'top-proposals-link' %></strong></div>
 						<div class="top-proposals-meta">
 							<small>	<%= proposal.proposal_votes_count %> Votos -
 							<%= fa_icon 'comment-o', text: proposal.comments.count %> - </small>

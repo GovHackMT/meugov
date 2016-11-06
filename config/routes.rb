@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'usuario/:id', to: 'users#show', as: :show_user
+
   get 'report_proposals/index'
 
   get 'report_proposals/result'
