@@ -34,7 +34,7 @@
 									<%= fa_icon 'map-marker' %>
 									<div class="proposta-writer">
 										<div class="proposta-writer-name"><%= proposal.city.name %></div>
-										<div class="proposta-writer-designation"><%= proposal.user.nickname %></div>
+										<div class="proposta-writer-designation"><%= link_to proposal.user.nickname, show_user_path(proposal.user) %></div>
 										<span class="proposta-date"><%= l proposal.created_at, format: :only_date %></span>
 									</div>
 								</div>

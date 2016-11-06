@@ -17,6 +17,7 @@ module ApplicationHelper
   end
 
   def avatar_tag(model, options = {})
+    options.merge! height: 48
     image_tag avatar_url(model), options
   end
 
