@@ -7,14 +7,25 @@
 		}
 	}
 	.top-proposals-item {
+		@extend .clearfix;
 		padding-bottom: 10px;
 		margin-bottom: 10px;
 		border-bottom: solid 1px #cecece;
 		.top-proposals-image {
 			margin-bottom: 5px;
 		}
+		.top-proposals-actions {
+			float: left;
+			margin-right: 10px;
+		}
 		.top-proposals-info {
-			.top-proposals-title {}
+			float: left;
+			.top-proposals-title {
+				font-family: $primary-font;
+				font-size: 16px;
+				color: $color-1;
+				line-height: 16px;
+			}
 			.top-proposals-meta {}
 		}
 	}

@@ -1,47 +1,94 @@
-<h1 class="page-header"><%= t 'proposals.index.title' %></h1>
 
-<div class="jumbotron">
-  <h2><%= @proposal.title %></h2>
-  <ul class="list-inline">
-    <li><%= fa_icon 'calendar', text: l(@proposal.created_at) %></li>
-    <li><%= fa_icon 'map', text: @proposal.city.name_with_state %></li>
-    <li><%= fa_icon 'bookmark', text: @proposal.proposal_category.name %></li>
-    <li><%= fa_icon 'bar-chart', text: @proposal.count_views %></li>
-  </ul>
 
-  <%= simple_format @proposal.content %>
+  <script>
+    <!--
+    jQuery(function() {
 
-  <hr />
+      var map = null;
 
-  <div class="media">
-    <div class="media-left">
-      <%= avatar_tag @proposal.user %>
-    </div>
-    <div class="media-body">
-      <h4 class="media-heading"><%= @proposal.user.nickname %></h4>
-    </div>
+      function initMap() {
+
+        var center = {lat:<%= @proposal.city.latitude %>, lng:<%= @proposal.city.longitude %>};
+
+        map = new google.maps.Map(document.getElementById('itemmap'), {
+          center: center,
+          scrollwheel: false,
+          zoom: 12
+        });
+
+        var myLatlng = new google.maps.LatLng(<%= @proposal.city.latitude %>, <%= @proposal.city.latitude %>);
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: '<%= @proposal.title %>'
+        });
+
+      }
+
+      google.maps.event.addDomListener(window, "load", initMap);
+      google.maps.event.addDomListener(window, "turbolinks:load", initMap);
+
+    });
+    -->
+  </script>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h1 class="page-header">Detalhes da Proposta</h1>
   </div>
+</div>
 
-  <hr />
+<div class="jumbotron proposta-item">
 
   <div class="row">
-    <div class="col-md-6" id="votes"><%= render 'votes', proposal: @proposal %></div>
-    <div class="col-md-6">
-      <strong>Aprovação</strong>
+
+    <div class="col-md-7">
+      <h2 class="title"><%= @proposal.title %></h2>
+      <h4 class="sub-title"><%= fa_icon 'bookmark', text: @proposal.proposal_category.name %></h4>
+      <hr>
+      <p class="text text-muted">Descrição:</p>
+      <p><%= simple_format @proposal.content %></p>
+    </div>
+
+    <div class="col-md-5">
+
+      <div class="proposta-avatar"><%= avatar_tag @proposal.user %></div>
+      <div class="proposta-writer">
+        <div class="proposta-writer-name"><%= fa_icon 'map', text: @proposal.city.name_with_state %></div>
+        <span class="proposta-date"><%= fa_icon 'calendar', text: l(@proposal.created_at) %></span>
+        <div class="proposta-writer-designation">por: <%= @proposal.user.name %></div>
+      </div>
+
+      <div id="itemmap"></div>
+      <hr>
+      <div class="row">
+        <div class="col-md-4" id="votes"><%= render 'votes', proposal: @proposal %></div>
+        <div class="col-md-8"> <h4><%= fa_icon 'bar-chart', text: @proposal.count_views %> visualizações</h4></div>
+      </div>
+      <br>
+
       <div id="thermometer"><%= render 'thermometer', total: @proposal.thermometer %></div>
+
+    </div>
+
+  </div>
+
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h3><span class="fa fa-comments-o"></span> <%= t 'comments.title' %> - <small><%= @proposal.comments.count %> Comentários</small></h3> 
+    <% if user_signed_in? %>
+      <%= render 'comments/new' %>
+    <% else %>
+      <p>
+        Para comentar você deve realizar o <%= link_to 'login', new_user_session_path %> no sistema.
+      </p>
+    <% end %>
+
+    <div id="comments">
+      <%= render partial: 'comments/comment', collection: @proposal.comments %>
     </div>
   </div>
 </div>
 
-<h1><%= t 'comments.title' %></h1>
-<% if user_signed_in? %>
-  <%= render 'comments/new' %>
-<% else %>
-  <p>
-    Para comentar você deve realizar o <%= link_to 'login', new_user_session_path %> no sistema.
-  </p>
-<% end %>
-
-<div id="comments">
-  <%= render partial: 'comments/comment', collection: @proposal.comments %>
-</div>

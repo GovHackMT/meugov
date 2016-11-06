@@ -45,6 +45,10 @@ group :development do
   gem 'spring'
   gem 'pry-meta'
   gem 'better_errors'
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 gem 'devise'

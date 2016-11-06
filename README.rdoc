@@ -8,3 +8,14 @@ Participantes:
 * Cesar Delgadillo (@cesardelgadillo)
 * Jozimar Santos (@jozimarso)
 * Luciano Santos (@lucianosilvasantos)
+
+Tecnologias
+* Ruby 2.2.4
+* Rails 4.2.5
+* MySQL 5.x
+* HTML, CSS (Sass) e Javascript (jQuery)
+* OS Like-Unix
+* Responsivo
+* Turbolinks
+* Capistrano - Ferramenta para deploy
+* Login social (Facebook e GitHub)
